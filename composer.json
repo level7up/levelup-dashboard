@@ -1,0 +1,29 @@
+{
+	"name": "level7up/dashboard",
+	"type": "library",
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"Level7up\\Dashboard\\": "src/",
+			"Level7up\\Dashboard\\Database\\Seeders\\": "database/seeders/",
+			"Level7up\\Dashboard\\Database\\Factories\\": "database/factories/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Abdulalim Mohamed",
+			"email": "abdoleemos200@gmail.com"
+		}
+	],
+	"require": {},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Level7up\\Dashboard\\Providers\\DashboardServiceProvider"
+			]
+		}
+	},
+	"scripts": {
+		"test": "vendor/bin/testbench package:test"
+	}
+}

@@ -4,8 +4,9 @@ namespace Level7up\Dashboard\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
-class Admin extends Model
+// use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+class Admin extends Authenticatable
 {
     use HasFactory;
 

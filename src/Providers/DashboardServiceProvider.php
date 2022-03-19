@@ -16,7 +16,7 @@ class DashboardServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'dashboard');
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
         $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'dashboard');
-        // $this->registerRoutes();
+        $this->registerRoutes();
         if ($this->app->runningInConsole()) {
             $this->registerCommands();
             // $this->registerCommands();
@@ -39,8 +39,6 @@ class DashboardServiceProvider extends ServiceProvider
     {
         Route::group([
             'middleware' => ['web'],
-            'prefix' => 'dashboard',
-            'as' => 'dashboard.',
         ], function () {
             $this->loadRoutesFrom(__DIR__.'/../../routes/dashboard.php');
         });

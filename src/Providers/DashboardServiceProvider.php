@@ -1,9 +1,10 @@
 <?php
 
 namespace Level7up\Dashboard\Providers;
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-
+use Level7up\Dashboard\Console\CreateAdmin;
 
 class DashboardServiceProvider extends ServiceProvider
 {
@@ -12,6 +13,7 @@ class DashboardServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__.'/../../routes/dashboard.php');
         // $this->registerRoutes();
+        $this->registerCommands();
         $this->publishes([
             __DIR__ . '/../../public/assets' => public_path('assets/dashboard'),
             __DIR__ . '/../../public/vendor' => public_path('vendor'),
@@ -40,6 +42,13 @@ class DashboardServiceProvider extends ServiceProvider
         });
 
     }
+    private function registerCommands()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                CreateAdmin::class,
+            ]);
+        }
+    }
 
-   
 }

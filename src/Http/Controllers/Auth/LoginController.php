@@ -3,8 +3,9 @@
 namespace Level7up\Dashboard\Http\Controllers\Auth;
 
 use Illuminate\Support\Facades\Auth;
-use Level7up\Dashboard\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Level7up\Dashboard\Http\Controllers\Controller;
+// use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
@@ -19,7 +20,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('auth::admin.login');
+        return view('dashboard::admin.login');
     }
 
     protected function guard()

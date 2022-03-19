@@ -11,7 +11,9 @@
         value="{{ $value }}"
         @if ($required) required @endif
         placeholder="{{ $placeholder }}"
-        class="form-check-input @error($name) is-invalid @enderror" />
+        class="form-check-input 
+        {{-- @error($name) is-invalid @enderror --}}
+        " />
     <label class="form-label fs-6 fw-bolder text-dark"
         for="{{ $id }}">
         @if (strlen($slot) > 0)
@@ -23,10 +25,10 @@
 
 
 
-    @error($name)
+    {{-- @error($name)
         <span class="invalid-feedback"
             role="alert">
             <strong>{{ $message }}</strong>
         </span>
-    @enderror
+    @enderror --}}
 </div>

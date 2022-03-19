@@ -20,12 +20,14 @@
         @if ($required) required @endif
         autocomplete="off"
         placeholder="{{$placeholder}}"
-        class="form-control form-control-lg form-control-solid @error($name) is-invalid @enderror" />
+        class="form-control form-control-lg form-control-solid 
+        {{-- @error($name) is-invalid @enderror --}}
+        " />
 
-    @error($name)
+    {{-- @error($name)
         <span class="invalid-feedback"
             role="alert">
             <strong>{{ $message }}</strong>
         </span>
-    @enderror
+    @enderror --}}
 </div>

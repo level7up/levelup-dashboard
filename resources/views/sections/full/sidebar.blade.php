@@ -72,7 +72,7 @@
                                 <div data-kt-menu-trigger="click"
                                     @class([
                                         'menu-item menu-accordion',
-                                        'here show' => is_menu_active($menu['items']),
+                                        // 'here show' => is_menu_active($menu['items']),
                                     ])>
                                     <span class="menu-link">
                                         @svg($menu['icon'], 'menu-icon')
@@ -81,13 +81,13 @@
                                     </span>
                                     <div @class([
                                         'menu-sub menu-sub-accordion',
-                                        'menu-active-bg' => is_menu_active($menu['items']),
+                                        // 'menu-active-bg' => is_menu_active($menu['items']),
                                     ])>
                                         @foreach ($menu['items'] as $item)
                                             <div class="menu-item">
                                                 <a @class([
                                                     'menu-link',
-                                                    'active' => is_menu_active($item['url']),
+                                                    // 'active' => is_menu_active($item['url']),
                                                 ])
                                                     href="{{ $item['url'] }}">
                                                     <span class="menu-bullet">
@@ -104,7 +104,7 @@
                                 <div class="menu-item">
                                     <a @class([
                                         'menu-link',
-                                        'active' => is_menu_active($menu['url']),
+                                        // 'active' => is_menu_active($menu['url']),
                                     ])
                                         href="{{ $menu['url'] }}">
                                         @svg($menu['icon'], "menu-icon")

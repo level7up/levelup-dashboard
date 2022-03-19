@@ -5,7 +5,6 @@ namespace Level7up\Dashboard\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Level7up\Dashboard\Http\Controllers\Controller;
-// use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {

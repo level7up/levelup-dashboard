@@ -17,7 +17,7 @@
 
         <div class="w-lg-500px">
             <div class="w-100 bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
-                <x-dashboard::form :action="route('dashboard.login')">
+                <x-dashboard::form :action="route('login')">
                     {!! $slot !!}
 
                     <x-dashboard::form.input required

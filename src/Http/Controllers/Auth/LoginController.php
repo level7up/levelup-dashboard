@@ -11,7 +11,7 @@ class LoginController extends Controller
 {
     use AuthenticatesUsers;
 
-    protected $redirectTo = '/dashboard';
+    protected $redirectTo = '/home';
 
     public function __construct()
     {
@@ -20,6 +20,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
+        // dd(Auth::guard()->user());
         return view('dashboard::admin.login');
     }
 

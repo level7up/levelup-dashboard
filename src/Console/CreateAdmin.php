@@ -15,7 +15,7 @@ class CreateAdmin extends Command
     public function handle()
     {
         $name = $this->ask('Enter admin name', 'Admin');
-        $email = $this->ask("Enter admin email", 'admin@hashstudio.com');
+        $email = $this->ask("Enter admin email", 'admin@level7up.com');
         $password = $this->ask("Enter admin password", "password");
         // $role = $this->ask("Enter role name", "super admin");
 

@@ -72,7 +72,7 @@
                 <!--begin::User menu-->
                 <div class="d-flex align-items-center ms-1 ms-lg-3"
                     id="kt_header_user_menu_toggle">
-                    {{-- <x-dashboard::dropdown.menu width="275">
+                    <x-dashboard::dropdown.menu width="275">
                         <x-slot name="button">
                             <img alt="Profile"
                                 src="{{ Auth::user()->avatar_url }}" />
@@ -93,12 +93,12 @@
                         </x-dashboard::dropdown.item>
                         <x-dashboard::dropdown.divider></x-dashboard::dropdown.divider>
 
-                        <x-dashboard::dropdown.item title="Account Settings"
-                            :href="route('dashboard.profile.settings', Auth::user()->id)" />
+                        {{-- <x-dashboard::dropdown.item title="Account Settings"
+                            :href="route('dashboard.profile.settings', Auth::user()->id)" /> --}}
                         <x-dashboard::dropdown.item title="Logout"
                             onclick="document.getElementById('logoutForm').submit();" />
 
-                    </x-dashboard::dropdown.menu> --}}
+                    </x-dashboard::dropdown.menu>
                 </div>
                 <!--end::User menu-->
                 <!--begin::Header menu toggle-->

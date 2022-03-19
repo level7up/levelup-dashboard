@@ -4,11 +4,11 @@ namespace Level7up\Dashboard\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-// use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Level7up\Dashboard\Models\Behaviors\HasDashboardAccess;
 class Admin extends Authenticatable
 {
-    use HasFactory;
+    use HasFactory, HasDashboardAccess;
 
     protected $base_route = "dashboard.users";
 

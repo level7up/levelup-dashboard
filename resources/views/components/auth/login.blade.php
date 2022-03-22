@@ -10,7 +10,7 @@
             <a href="/"
                 class="mb-12">
                 <img alt="{{ config('app.name') }}"
-                    {{-- src="{{ dashboard('logo', 'square') }}" --}}
+                    src=""
                     width="100" />
             </a>
         </div>

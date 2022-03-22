@@ -14,6 +14,11 @@
 
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.2/select2.css"
+        integrity="sha512-8doNprLI7BCCBYRH642nRhdzbmgMNERNjaW7rZ2xtKbsgTI1HCqQKpQClTxjMZs/deq6y8OLW8IcV0PXUTgvWw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
 
     <link href="{{ asset('dashboard/plugins/global/plugins.bundle.css') }}"
         rel="stylesheet"
@@ -28,11 +33,7 @@
     <link href="{{ asset('dashboard/plugins/custom/datatables/datatables.bundle.css') }}"
         rel="stylesheet"
         type="text/css" />
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.2/select2.css"
-        integrity="sha512-8doNprLI7BCCBYRH642nRhdzbmgMNERNjaW7rZ2xtKbsgTI1HCqQKpQClTxjMZs/deq6y8OLW8IcV0PXUTgvWw=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer" />
+
     <link href="{{ asset('dashboard/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}"
         rel="stylesheet"
         type="text/css" />

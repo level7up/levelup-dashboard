@@ -1,1 +1,1 @@
-(()=>{"use strict";var n={init:function(){}};KTUtil.onDOMContentLoaded((function(){n.init()}))})();
+"use strict";var KTGeneralDrawerDemos={init:function(){}};KTUtil.onDOMContentLoaded((function(){KTGeneralDrawerDemos.init()}));

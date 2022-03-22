@@ -1,1 +1,1 @@
-(()=>{"use strict";var t={init:function(){ClassicEditor.create(document.querySelector("#kt_docs_ckeditor_classic")).then((function(t){console.log(t)})).catch((function(t){console.error(t)}))}};KTUtil.onDOMContentLoaded((function(){t.init()}))})();
+"use strict";var KTFormsCKEditorClassic={init:function(){ClassicEditor.create(document.querySelector("#kt_docs_ckeditor_classic")).then((o=>{console.log(o)})).catch((o=>{console.error(o)}))}};KTUtil.onDOMContentLoaded((function(){KTFormsCKEditorClassic.init()}));

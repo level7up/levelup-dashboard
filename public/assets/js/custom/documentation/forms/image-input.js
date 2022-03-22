@@ -1,1 +1,1 @@
-(()=>{"use strict";var n={init:function(){}};KTUtil.onDOMContentLoaded((function(){n.init()}))})();
+"use strict";var KTGeneralImageInputDemos={init:function(){}};KTUtil.onDOMContentLoaded((function(){KTGeneralImageInputDemos.init()}));

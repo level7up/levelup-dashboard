@@ -17,8 +17,8 @@
                 <div class="aside-user-info flex-row-fluid flex-wrap ms-5">
                     <div class="d-flex">
                         <div class="flex-grow-1 me-2">
-                            <a href="#" class="text-white text-hover-primary fs-6 fw-bold">Paul Melone</a>
-                            <span class="text-gray-600 fw-bold d-block fs-8 mb-1">Python Dev</span>
+                            <a href="#" class="text-white text-hover-primary fs-6 fw-bold">{{Auth::user()->name}}</a>
+                            <span class="text-gray-600 fw-bold d-block fs-8 mb-1">{{Auth::user()->email}}</span>
                             <div class="d-flex align-items-center text-success fs-9">
                             <span class="bullet bullet-dot bg-success me-1"></span>online</div>
                         </div>
@@ -45,8 +45,9 @@
                                         </div>
                                     </div>
                                     <x-dashboard::dropdown.divider></x-dashboard::dropdown.divider>
-                                    {{-- <x-dashboard::dropdown.item title="Account Settings"
-                                        :href="route('dashboard.profile.settings', Auth::user()->id)" /> --}}
+                                    <x-dashboard::dropdown.item title="Account Settings"
+                                        {{-- :href="route('dashboard.profile.settings', Auth::user()->id)"  --}}
+                                        />
                                     <x-dashboard::dropdown.item title="Logout"
                                         onclick="document.getElementById('logoutForm').submit();" />
 

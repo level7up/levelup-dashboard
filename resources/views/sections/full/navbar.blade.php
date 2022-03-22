@@ -1,7 +1,7 @@
 <div id="kt_header" class="header align-items-stretch">
     <div class="header-brand">
         <a href="../../demo8/dist/index.html">
-            <img alt="Logo" src="assets/media/logos/logo-1-dark.svg" class="h-25px h-lg-25px" />
+            <img alt="Logo" src="{{config('dashboard.logo.default')}}" class="h-25px h-lg-25px" />
         </a>
         <div id="kt_aside_toggle" class="btn btn-icon w-auto px-0 btn-active-color-primary aside-minimize" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="aside-minimize">
             <span class="svg-icon svg-icon-1 me-n1 minimize-default">
@@ -36,14 +36,19 @@
                 <h1 class="d-flex flex-column text-dark fw-bolder fs-3 mb-0">{{ $title }}</h1>
                 <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 pt-1">
                 {{-- {{dd(\Request::route()->getName())}} --}}
-                    @foreach (explode('.', \Request::route()->getName()) as $item)
+                    @foreach (explode('.', request()->route()->url) as $item)
                         @unless(in_array($item, ['dashboard']) || Str::startsWith($item, "{"))
                             <li class="breadcrumb-item text-muted">
-                                <span class="text-muted">{{ ucwords($item) }} .</span>
+                                <span class="text-muted">{{ ucwords($item) }}</span>
                             </li>
                         @endunless
                     @endforeach
                 </ul>
+            </div>
+            <div class="d-flex align-items-stretch overflow-auto pt-3 pt-lg-0">
+                <div class="d-flex align-items-center">
+                    <h1>SomeThing</h1>
+                </div>
             </div>
         </div>
     </div>

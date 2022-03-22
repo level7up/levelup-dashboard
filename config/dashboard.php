@@ -3,7 +3,7 @@
 return [
 
     'logo' => [
-        'default' => asset('dashboard/media/logos/180x50.png'),
+        'default' => asset('dashboard/media/logos/logo-012.png'),
         'default-dark' => asset('dashboard/media/logos/180x50-dark.png'),
         'favicon' => asset('dashboard/media/logos/60x60.png'),
         'favicon-dark' => asset('dashboard/media/logos/60x60-dark.png'),

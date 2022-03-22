@@ -1,6 +1,6 @@
 <div id="kt_header" class="header align-items-stretch">
     <div class="header-brand">
-        <a href="../../demo8/dist/index.html">
+        <a href="{{route('dashboard.home')}}">
             <img alt="Logo" src="{{config('dashboard.logo.default')}}" class="h-25px h-lg-25px" />
         </a>
         <div id="kt_aside_toggle" class="btn btn-icon w-auto px-0 btn-active-color-primary aside-minimize" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="aside-minimize">
@@ -47,9 +47,20 @@
             </div>
             <div class="d-flex align-items-stretch overflow-auto pt-3 pt-lg-0">
                 <div class="d-flex align-items-center">
-                    <h1>SomeThing</h1>
+                    <a href="{{route('dashboard.home')}}"
+                        class="btn btn-sm btn-primary btn-hover-rotate-start">
+                        TABANI
+                    </a>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+@push('scripts')
+    <script>
+    
+    </script>
+    
+@endpush

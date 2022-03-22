@@ -9,9 +9,9 @@
         <div class="col-sm-12 text-center p-8">
             <a href="/"
                 class="mb-12">
-                <img alt="{{ config('app.name') }}"
-                    src=""
-                    width="100" />
+                <img alt="{{ config('dashboard.name') }}"
+                    src="{{config('dashboard.logo.default')}}"
+                    width="200" />
             </a>
         </div>
 

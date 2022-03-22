@@ -6,4 +6,4 @@ use Level7up\Dashboard\Http\Controllers\Auth\LoginController;
 
 
 
-Route::get('/home', [DashboardController::class , 'index'])->name('home');
+Route::get('/', [DashboardController::class , 'index'])->name('home');

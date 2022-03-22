@@ -35,10 +35,11 @@
             <div class="page-title d-flex justify-content-center flex-column me-5">
                 <h1 class="d-flex flex-column text-dark fw-bolder fs-3 mb-0">{{ $title }}</h1>
                 <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 pt-1">
-                    @foreach (explode('/', request()->route()->uri) as $item)
+                {{-- {{dd(\Request::route()->getName())}} --}}
+                    @foreach (explode('.', \Request::route()->getName()) as $item)
                         @unless(in_array($item, ['dashboard']) || Str::startsWith($item, "{"))
                             <li class="breadcrumb-item text-muted">
-                                <span class="text-muted">{{ ucwords($item) }}</span>
+                                <span class="text-muted">{{ ucwords($item) }} .</span>
                             </li>
                         @endunless
                     @endforeach

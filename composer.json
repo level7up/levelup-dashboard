@@ -37,7 +37,8 @@
 		"spatie/laravel-fractal": "^5.8",
 		"laravel-notification-channels/fcm": "~2.0",
 		"laravel/passport": "^10.3",
-		"laravel/ui": "^3.4"
+		"laravel/ui": "^3.4",
+		"codeat3/blade-phosphor-icons": "^1.4"
 	},
 	"extra": {
 		"laravel": {

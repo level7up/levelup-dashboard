@@ -19,9 +19,9 @@
 
     @if ($header)
         <div @class(["card-header"])>
-            <div class="card-title">
+            {{-- <div class="card-title"> --}}
                 <h2> {!! $header !!}</h2>
-            </div>
+            {{-- </div> --}}
         </div>
     @elseif($title || $headerBtn)
         <div @class(["card-header pt-5"])>

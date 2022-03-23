@@ -236,6 +236,7 @@ class ComposerStaticInit62f8986843e6920a131568fb0035d883
         array (
             'Complex\\' => 8,
             'Collective\\Html\\' => 16,
+            'Codeat3\\BladePhosphorIcons\\' => 27,
             'Carbon\\' => 7,
         ),
         'B' => 
@@ -771,6 +772,10 @@ class ComposerStaticInit62f8986843e6920a131568fb0035d883
         'Collective\\Html\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravelcollective/html/src',
+        ),
+        'Codeat3\\BladePhosphorIcons\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/codeat3/blade-phosphor-icons/src',
         ),
         'Carbon\\' => 
         array (

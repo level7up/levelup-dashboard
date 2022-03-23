@@ -1,4 +1,4 @@
-@props(['name', 'title' => 'Change image', 'value', 'allowTypes' => 'png, jpg, jpeg, svg, gif'])
+@props(['name', 'title' => 'Change image', 'value'=>'', 'allowTypes' => 'png, jpg, jpeg, svg, gif'])
 
 <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative mx-5 my-3">
     <div class="image-input image-input-outline mb-3"

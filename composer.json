@@ -7,6 +7,14 @@
 			"Level7up\\Dashboard\\": "src/",
 			"Level7up\\Dashboard\\Database\\Seeders\\": "database/seeders/",
 			"Level7up\\Dashboard\\Database\\Factories\\": "database/factories/"
+		},
+		"files": [
+			"helpers.php"
+		]
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Tests\\": "tests/"
 		}
 	},
 	"authors": [
@@ -29,7 +37,6 @@
 		"spatie/laravel-fractal": "^5.8",
 		"laravel-notification-channels/fcm": "~2.0",
 		"laravel/passport": "^10.3",
-		"garygreen/pretty-routes": "^1.0",
 		"laravel/ui": "^3.4"
 	},
 	"extra": {

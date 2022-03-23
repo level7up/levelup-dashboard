@@ -8,7 +8,7 @@
             <div
                 class="d-flex flex-center flex-shrink-0 bg-light rounded w-100px h-100px w-lg-150px h-lg-150px me-7 mb-4">
                 <img class="mw-50px mw-lg-75px"
-                    {{-- src="{{ setting('logo', 'square') }}" --}}
+                    src="{{ setting('logo', 'square') }}"
                     alt="image">
             </div>
 
@@ -35,38 +35,50 @@
         <div class="separator"></div>
 
         <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bolder">
-            <!--begin::Nav item-->
             <li class="nav-item">
                 <a @class([
                     'nav-link text-active-primary py-5 me-6',
-                    'active' => $route == 'dashboard.settings.updateGeneral',
+                    'active' => request()->is('dashboard/home/hero*'),
                 ])
-                    href="{{ route('dashboard.settings.updateGeneral', 'en') }}">
-                    General Settings
+                    href="{{ route('dashboard.home', ['section' => 'hero', 'locale' => $locale]) }}">
+                    Hero Settings
                 </a>
                 <a @class([
                     'nav-link text-active-primary py-5 me-6',
-                    'active' => $route == 'dashboard.settings.updateLogos',
+                    'active' => request()->is('dashboard/home/services*'),
                 ])
-                    href="{{ route('dashboard.settings.updateLogos') }}">
-                    Logo Settings
+                    href="{{ route('dashboard.home', ['section' => 'services', 'locale' => $locale]) }}">
+                    Our Services
                 </a>
                 <a @class([
                     'nav-link text-active-primary py-5 me-6',
-                    'active' => $route == 'dashboard.settings.updateSocial',
+                    'active' => request()->is('dashboard/home/suggested*'),
                 ])
-                    href="{{ route('dashboard.settings.updateSocial') }}">
-                    Social Settings
+                    href="{{ route('dashboard.home', ['section' => 'suggested', 'locale' => $locale]) }}">
+                    Suggested
                 </a>
                 <a @class([
                     'nav-link text-active-primary py-5 me-6',
-                    'active' => $route == 'dashboard.settings.updateMobile',
+                    'active' => request()->is('dashboard/home/download_app*'),
                 ])
-                    href="{{ route('dashboard.settings.updateMobile') }}">
-                    Mobile Settings
+                    href="{{ route('dashboard.home', ['section' => 'download_app', 'locale' => $locale]) }}">
+                    Download App Settings
+                </a>
+                <a @class([
+                    'nav-link text-active-primary py-5 me-6',
+                    'active' => request()->is('dashboard/home/steps*'),
+                ])
+                    href="{{ route('dashboard.home', ['section' => 'steps', 'locale' => $locale]) }}">
+                    Steps
+                </a>
+                <a @class([
+                    'nav-link text-active-primary py-5 me-6',
+                    'active' => request()->is('dashboard/home/testimonials*'),
+                ])
+                    href="{{ route('dashboard.home', ['section' => 'testimonials', 'locale' => $locale]) }}">
+                    Testimonials
                 </a>
             </li>
-            <!--end::Nav item-->
         </ul>
     </x-dashboard::card>
 

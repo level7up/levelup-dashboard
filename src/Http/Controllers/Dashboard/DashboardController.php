@@ -1,5 +1,5 @@
 <?php
-namespace Level7up\Dashboard\Http\Controllers;
+namespace Level7up\Dashboard\Http\Controllers\Dashboard;
 use Level7up\Dashboard\Http\Controllers\Controller;
 
 

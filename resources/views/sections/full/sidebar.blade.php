@@ -19,8 +19,6 @@
                         <div class="flex-grow-1 me-2">
                             <a href="#" class="text-white text-hover-primary fs-6 fw-bold">{{Auth::user()->name}}</a>
                             <span class="text-gray-600 fw-bold d-block fs-8 mb-1">{{Auth::user()->email}}</span>
-                            <div class="d-flex align-items-center text-success fs-9">
-                            <span class="bullet bullet-dot bg-success me-1"></span>online</div>
                         </div>
                         <div class="me-n2">
                             <a href="#" class="btn btn-icon btn-sm btn-active-color-primary mt-n2" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" data-kt-menu-overflow="true">

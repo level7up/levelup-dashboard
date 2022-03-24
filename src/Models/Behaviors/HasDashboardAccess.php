@@ -12,10 +12,10 @@ trait HasDashboardAccess
 
         return asset('dashboard/media/avatars/blank.png');
     }
-    public function getImageAttribute($original)
+    public function getPetImageAttribute($original)
     {
         if ($original) {
-            return "/storage/images/teams/".$original;
+            return "/storage/pet_image/".$original;
         }
 
         return asset('dashboard/media/avatars/blank.png');

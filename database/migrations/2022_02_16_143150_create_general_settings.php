@@ -6,9 +6,9 @@ class CreateGeneralSettings extends SettingsMigration
 {
     public function up(): void
     {
-        $this->migrator->add('general.site_name','Hash');
-        $this->migrator->add('general.email','hash@gmail.com');
-        $this->migrator->add('general.phone','+201012895020');
+        $this->migrator->add('general.site_name','Tabani');
+        $this->migrator->add('general.email','Tabani@gmail.com');
+        $this->migrator->add('general.phone','+201000000010');
         $this->migrator->add('general.site_description',[
             'en'=>'Enjoy a smoother and easier experience on your phone, download the app now',
             'ar' =>'وصف الموقع بس بالعربي'
@@ -22,8 +22,8 @@ class CreateGeneralSettings extends SettingsMigration
             'ar' =>'السلوجن بس  بالعربي'
         ]);
         $this->migrator->add('general.copyrights',[
-            'en'=>'HashStudio copyrights',
-            'ar' =>'هاش ستوديو'
+            'en'=>'Tabani copyrights',
+            'ar' =>'تبني'
         ]);
     }
 }

@@ -7,9 +7,12 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 use Level7up\Dashboard\Console\CreateAdmin;
+use Level7up\Dashboard\Providers\Traits\BootDashboardSidebar;
+use Level7up\Dashboard\Providers\Traits\BootLivewireComponents;
+use Level7up\Dashboard\Providers\Traits\BootSettingsConfig;
 
 class DashboardServiceProvider extends ServiceProvider
-{
+{   use BootSettingsConfig, BootLivewireComponents, BootDashboardSidebar;
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../../config/dashboard.php', 'dashboard');
@@ -27,9 +30,11 @@ class DashboardServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->registerCommands();
             $this->configurePublishing();;
+        }else {
+            // $this->bootSettingsConfig();
+            // $this->bootDashboardSidebar();
+            $this->bootLivewireComponents();
         }
-
-
     }
     protected function configurePublishing()
     {

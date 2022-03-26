@@ -1,6 +1,6 @@
 <?php
 
-use HashStudio\Dashboard\Http\Controllers\Dashboard\FaqController;
+use Level7up\Dashboard\Http\Controllers\Dashboard\FaqController;
 
 return [
     "update" => 'تم التحديث بنجاح',

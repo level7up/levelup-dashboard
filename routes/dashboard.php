@@ -1,31 +1,34 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Level7up\Dashboard\Http\Controllers\Auth\LoginController;
-use Level7up\Dashboard\Http\Controllers\Dashboard\SettingController;
-use Level7up\Dashboard\Http\Controllers\Dashboard\DashboardController;
+use Level7up\Dashboard\Http\Controllers\Dashboard;
 
 
 
-Route::get('/', [DashboardController::class , 'index'])->name('home');
+Route::get('/', [Dashboard\DashboardController::class , 'index'])->name('home');
 
+if (dashboard_has('user_roles_enabled')) {
+        Route::resource('roles' , Dashboard\RoleController::class);
+        Route::resource('permissions' , Dashboard\PermissionsController::class);
+        Route::post('assign-role/{id}' , [get_dashboard_controller("Users"),'updateUserRole'])->name('assignrole');
+    }
 
 // SETTINGS ----------------------------
 Route::group([
     'prefix' => 'settings'
 ], function(){
 
-    Route::get('logos', [SettingController::class, 'index'])->name('settings.updateLogos');
-    Route::post('logos', [SettingController::class, 'updateLogos']);
+    Route::get('logos', [Dashboard\SettingController::class, 'index'])->name('settings.updateLogos');
+    Route::post('logos', [Dashboard\SettingController::class, 'updateLogos']);
 
-    Route::post('setDefaultlogo/{key}', [SettingController::class, 'setDefaultLogo'])->name('settings.defaultLogo');
+    Route::post('setDefaultlogo/{key}', [Dashboard\SettingController::class, 'setDefaultLogo'])->name('settings.defaultLogo');
 
-    Route::get('general/{locale?}', [SettingController::class, 'general'])->name('settings.updateGeneral');
-    Route::post('general', [SettingController::class, 'updateGeneral']);
+    Route::get('general/{locale?}', [Dashboard\SettingController::class, 'general'])->name('settings.updateGeneral');
+    Route::post('general', [Dashboard\SettingController::class, 'updateGeneral']);
 
-    Route::get('social', [SettingController::class, 'social'])->name('settings.updateSocial');
-    Route::post('social', [SettingController::class, 'updateSocial']);
+    Route::get('social', [Dashboard\SettingController::class, 'social'])->name('settings.updateSocial');
+    Route::post('social', [Dashboard\SettingController::class, 'updateSocial']);
 
-    Route::get('mobile', [SettingController::class, 'mobile'])->name('settings.updateMobile');
-    Route::post('mobile', [SettingController::class, 'updateMobile']);
+    Route::get('mobile', [Dashboard\SettingController::class, 'mobile'])->name('settings.updateMobile');
+    Route::post('mobile', [Dashboard\SettingController::class, 'updateMobile']);
 });

@@ -160,9 +160,10 @@ if (! function_exists('get_dashboard_controller')) {
      */
     function get_dashboard_controller(string $name)
     {
+        // dd("Wrong");
         return class_exists("App\Http\Controllers\Dashboard\\{$name}Controller") ?
             "App\Http\Controllers\Dashboard\\{$name}Controller" :
-            "HashStudio\Dashboard\Http\Controllers\Dashboard\\{$name}Controller";
+            "App\Http\Controllers\\{$name}Controller";
     }
 }
 
@@ -177,7 +178,7 @@ if (! function_exists('get_dashboard_transformer')) {
     {
         return class_exists("App\Transformers\\{$name}Transformer") ?
             "App\Transformers\\{$name}Transformer" :
-            "HashStudio\Dashboard\Transformers\\{$name}Transformer";
+            "Level7up\Dashboard\Transformers\\{$name}Transformer";
     }
 }
 

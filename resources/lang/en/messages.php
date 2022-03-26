@@ -51,6 +51,11 @@ return [
         'deleted' => ":name has been deleted successfully",
         'created' => ":name has been created successfully",
     ],
+    'category' => [
+        'updated' => ":name has been updated successfully",
+        'deleted' => ":name has been deleted successfully",
+        'created' => ":name has been created successfully",
+    ],
     'favorite' => [
         'added' => "Added to favorite successfuly",
         'deleted' => "Deleted from favorite successfuly",

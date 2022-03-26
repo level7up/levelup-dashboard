@@ -101,7 +101,7 @@ if (!function_exists('get_setting_group_class')) {
 
         $groupSettings = "${group}Settings";
         $namespace = preg_grep("~${groupSettings}~", config('settings.settings'));
-
+            // dd($namespace);
         if (count($namespace) > 0) {
             return array_values($namespace)[0];
         }

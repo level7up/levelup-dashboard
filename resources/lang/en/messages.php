@@ -30,6 +30,7 @@ return [
         'updateGeneral' => 'General settings has been updated successfully',
         'updateLogos' => 'Logo has been updated',
         'heroUpdate' => 'hero has been updated',
+        'updateSocial' => 'Social has been updated',
         'servicesUpdate' => 'services has been updated',
         'suggestedUpdate' => 'suggested has been updated',
         'updatedownloadApp' => 'Download app has been updated',

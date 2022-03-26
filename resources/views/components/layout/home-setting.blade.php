@@ -2,14 +2,11 @@
 
 <x-dashboard::full title="Home Settings">
 
-    <x-dashboard::card class="mb-9 pb-0"
-        body-class="pt-9 pb-0">
+    <x-dashboard::card class="mb-9 pb-0" body-class="pt-9 pb-0">
         <div class="d-flex flex-wrap flex-sm-nowrap mb-6">
             <div
                 class="d-flex flex-center flex-shrink-0 bg-light rounded w-100px h-100px w-lg-150px h-lg-150px me-7 mb-4">
-                <img class="mw-50px mw-lg-75px"
-                    src="{{ setting('logo', 'square') }}"
-                    alt="image">
+                <img class="mw-50px mw-lg-75px" src="{{ setting('logo', 'square') }}" alt="image">
             </div>
 
             <div class="flex-grow-1">
@@ -23,8 +20,7 @@
 
                     </div>
                     <div class="d-flex mb-4">
-                        <a href="{{ $locale == 'ar' ? './en' : './ar' }}"
-                            class="btn btn-sm btn-primary me-3"
+                        <a href="{{ $locale == 'ar' ? './en' : './ar' }}" class="btn btn-sm btn-primary me-3"
                             data-bs-target="#kt_modal_new_target">{{ $locale == 'en' ? 'Edit Arabic' : 'Edit English' }}</a>
                     </div>
                 </div>
@@ -84,8 +80,7 @@
 
     {{-- body --}}
     {{-- class="p-9" --}}
-    <x-dashboard::form :action="route($route)"
-        enctype="multipart/form-data">
+    <x-dashboard::form :action="route($route)" enctype="multipart/form-data">
         <x-dashboard::card>
             <x-slot name="header">
                 <div class="card-title fs-3 fw-bolder">

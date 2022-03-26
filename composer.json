@@ -2,6 +2,12 @@
 	"name": "level7up/dashboard",
 	"type": "library",
 	"license": "MIT",
+	"authors": [
+		{
+			"name": "Abdulalim Mohamed",
+			"email": "abdoleemos200@gmail.com"
+		}
+	],
 	"autoload": {
 		"psr-4": {
 			"Level7up\\Dashboard\\": "src/",
@@ -17,12 +23,6 @@
 			"Tests\\": "tests/"
 		}
 	},
-	"authors": [
-		{
-			"name": "Abdulalim Mohamed",
-			"email": "abdoleemos200@gmail.com"
-		}
-	],
 	"require": {
 		"php": "^7.4.0",
 		"illuminate/support": "^8.0",
@@ -36,7 +36,6 @@
 		"spatie/laravel-fractal": "^5.8",
 		"laravel-notification-channels/fcm": "~2.0",
 		"laravel/passport": "^10.3",
-		"laravel/ui": "^3.4",
 		"codeat3/blade-phosphor-icons": "^1.4"
 	},
 	"extra": {

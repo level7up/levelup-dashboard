@@ -141,7 +141,6 @@ class ComposerStaticInit62f8986843e6920a131568fb0035d883
             'League\\CommonMark\\' => 18,
             'Lcobucci\\JWT\\' => 13,
             'Lcobucci\\Clock\\' => 15,
-            'Laravel\\Ui\\' => 11,
             'Laravel\\SerializableClosure\\' => 28,
             'Laravel\\Passport\\Database\\Factories\\' => 36,
             'Laravel\\Passport\\' => 17,
@@ -168,7 +167,6 @@ class ComposerStaticInit62f8986843e6920a131568fb0035d883
             'Illuminate\\Notifications\\' => 25,
             'Illuminate\\Mail\\' => 16,
             'Illuminate\\Http\\' => 16,
-            'Illuminate\\Foundation\\Auth\\' => 27,
             'Illuminate\\Filesystem\\' => 22,
             'Illuminate\\Events\\' => 18,
             'Illuminate\\Encryption\\' => 22,
@@ -512,10 +510,6 @@ class ComposerStaticInit62f8986843e6920a131568fb0035d883
         array (
             0 => __DIR__ . '/..' . '/lcobucci/clock/src',
         ),
-        'Laravel\\Ui\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/laravel/ui/src',
-        ),
         'Laravel\\SerializableClosure\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/serializable-closure/src',
@@ -585,10 +579,6 @@ class ComposerStaticInit62f8986843e6920a131568fb0035d883
         'Illuminate\\Http\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/http',
-        ),
-        'Illuminate\\Foundation\\Auth\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/laravel/ui/auth-backend',
         ),
         'Illuminate\\Filesystem\\' => 
         array (

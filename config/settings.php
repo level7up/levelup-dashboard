@@ -1,5 +1,5 @@
 <?php
-
+use Level7up\Dashboard\Settings;
 return [
 
     /*
@@ -7,7 +7,10 @@ return [
      * put them (manually) here.
      */
     'settings' => [
-
+        Settings\LogoSettings::class,
+        Settings\GeneralSettings::class,
+        Settings\SocialSettings::class,
+        Settings\MobileSettings::class,
     ],
 
     /*

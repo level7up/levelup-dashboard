@@ -13,18 +13,17 @@
 <div @class([
     "card bg-${color} {$attributes->get('class')}",
     'w-100' => $stretch,
-    'card-flush' => $flush
-])
-    {{ $attributes->except('class') }}>
+    'card-flush' => $flush,
+]) {{ $attributes->except('class') }}>
 
     @if ($header)
-        <div @class(["card-header"])>
-            {{-- <div class="card-title"> --}}
+        <div @class(['card-header p-5'])>
+            <div class="card-title">
                 <h2> {!! $header !!}</h2>
-            {{-- </div> --}}
+            </div>
         </div>
     @elseif($title || $headerBtn)
-        <div @class(["card-header pt-5"])>
+        <div @class(['card-header pt-5'])>
             @if ($title)
                 <div class="card-title">
                     @if ($icon)

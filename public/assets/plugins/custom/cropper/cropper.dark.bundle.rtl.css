@@ -77,9 +77,9 @@
 .cropper-dashed.dashed-h {
   border-bottom-width: 1px;
   border-top-width: 1px;
-  height: 33.3333333333%;
+  height: calc(100% / 3);
   left: 0;
-  top: 33.3333333333%;
+  top: calc(100% / 3);
   width: 100%;
 }
 
@@ -87,9 +87,9 @@
   border-left-width: 1px;
   border-right-width: 1px;
   height: 100%;
-  left: 33.3333333333%;
+  left: calc(100% / 3);
   top: 0;
-  width: 33.3333333333%;
+  width: calc(100% / 3);
 }
 
 .cropper-center {

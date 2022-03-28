@@ -9,6 +9,7 @@ class GeneralSettings extends Settings
     public string $site_name;
     public string $email;
     public string $phone;
+    public string $mainColor;
     public array $site_description;
     public array $address;
     public array $slogan;

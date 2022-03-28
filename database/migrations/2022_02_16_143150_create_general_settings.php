@@ -9,6 +9,7 @@ class CreateGeneralSettings extends SettingsMigration
         $this->migrator->add('general.site_name','Tabani');
         $this->migrator->add('general.email','Tabani@gmail.com');
         $this->migrator->add('general.phone','+201000000010');
+        $this->migrator->add('general.mainColor','#35a180');
         $this->migrator->add('general.site_description',[
             'en'=>'Enjoy a smoother and easier experience on your phone, download the app now',
             'ar' =>'وصف الموقع بس بالعربي'

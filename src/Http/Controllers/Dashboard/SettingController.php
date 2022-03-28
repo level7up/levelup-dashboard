@@ -56,6 +56,7 @@ class SettingController extends Controller
             'site_name' => 'required',
             'site_description' => 'required',
             'slogan' => 'required',
+            'mainColor' => 'required',
             'address' => 'required',
             'email' => 'required',
             'phone' => 'required',
@@ -66,6 +67,7 @@ class SettingController extends Controller
         $general->site_name = $request->site_name;
         $general->email = $request->email;
         $general->phone = $request->phone;
+        $general->mainColor = $request->mainColor;
 
         $general->site_description = array_merge($general->site_description, [
             $request->locale =>  $request->site_description,

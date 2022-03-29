@@ -22,26 +22,5 @@ return [
         ],
     ],
     'sidebar' => [
-        [
-            'title' => 'Dashboard',
-            'url' => '/dashboard',
-            'icon' => 'ri-dashboard-3-line',
-        ],
-        [
-            'title' => 'Pets Categories',
-            'url' => '/dashboard/pets-categories',
-            'icon' => 'ri-dashboard-3-line',
-        ],
-        [
-            'title' => 'Users',
-            'icon' => 'ri-group-2-line',
-            'items' => [
-                [
-                    'title' => "List users",
-                    'url' => '/dashboard/users',
-                ]
-            ]
-        ],
-        
     ],
 ];

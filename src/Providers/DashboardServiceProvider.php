@@ -31,8 +31,8 @@ class DashboardServiceProvider extends ServiceProvider
             $this->registerCommands();
             $this->configurePublishing();;
         }else {
-            // $this->bootSettingsConfig();
-            // $this->bootDashboardSidebar();
+            $this->bootSettingsConfig();
+            $this->bootDashboardSidebar();
             $this->bootLivewireComponents();
         }
     }

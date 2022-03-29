@@ -13,13 +13,13 @@ trait BootDashboardSidebar
             $this->getDashboardMenu(),
             $this->getNavUserMenu(),
             $this->getAdminsMenu(),
-            $this->getContactUsMenu(),
-            $this->getCountriesMenu(),
-            $this->getStaticPagesMenu(),
+            // $this->getContactUsMenu(),
+            // $this->getCountriesMenu(),
+            // $this->getStaticPagesMenu(),
             $this->getSettingsMenu(),
-            $this->getFAQsMenu(),
-            $this->getCategoriesMenu(),
-            $this->getNotificationsMenu(),
+            // $this->getFAQsMenu(),
+            // $this->getCategoriesMenu(),
+            // $this->getNotificationsMenu(),
         ]);
 
         foreach([
@@ -41,7 +41,7 @@ trait BootDashboardSidebar
         return [
             'title' => 'Dashboard',
             'url' => '/dashboard',
-            'icon' => 'duotune-general-001',
+            'icon' => 'phosphor-desktop-duotone',
             'order' => 0,
         ];
     }
@@ -50,7 +50,7 @@ trait BootDashboardSidebar
     {
         return [
             'title' => 'Admins',
-            'icon' => 'duotune-general-049',
+            'icon' => 'phosphor-user-circle-gear',
             'order' => 300,
             'items' => [
                 [
@@ -75,7 +75,7 @@ trait BootDashboardSidebar
             return [
                 'title' => 'Users',
                 'order' => 200,
-                'icon' => 'duotune-communication-013',
+                'icon' => 'phosphor-user-focus',
                 'url' => '/dashboard/users',
             ];
         }
@@ -99,7 +99,7 @@ trait BootDashboardSidebar
         return [
             'title' => 'Users',
             'order' => 20,
-            'icon' => 'duotune-communication-013',
+            'icon' => 'phosphor-piano-keys-duotone',
             'items' => array_merge($items, [
                 [
                     'title' => 'Roles',
@@ -121,7 +121,7 @@ trait BootDashboardSidebar
 
         return [
             'title' => 'Promo Codes',
-            'icon' => 'duotune-ecommerce-003',
+            'icon' => 'phosphor-piano-keys-duotone',
             'order' => 900,
             'url' => '/dashboard/promo-codes',
         ];
@@ -129,9 +129,10 @@ trait BootDashboardSidebar
 
     private function getStaticPagesMenu()
     {
+        
         return [
             'title' => 'Pages',
-            'icon' => 'duotune-general-054',
+            'icon' => 'phosphor-piano-keys-duotone',
             'url' => '/dashboard/pages',
             'order' => 900,
         ];
@@ -141,7 +142,7 @@ trait BootDashboardSidebar
     {
         return [
             'title' => 'Countries List',
-            'icon' => 'duotune-maps-004',
+            'icon' => 'phosphor-piano-keys-duotone',
             'url' => '/dashboard/countries',
             'order' => 1000,
         ];
@@ -155,7 +156,7 @@ trait BootDashboardSidebar
 
         return [
             'title' => 'Teams',
-            'icon' => 'duotune-technology-001',
+            'icon' => 'phosphor-piano-keys-duotone',
             'url' => '/dashboard/teams',
             'order' => 1000,
         ];
@@ -165,7 +166,7 @@ trait BootDashboardSidebar
     {
         return [
             'title' => 'Settings',
-            'icon' => 'duotune-coding-009',
+            'icon' => 'phosphor-gear-six-duotone',
             'order' => 1100,
             'items' => [
                 [
@@ -188,7 +189,7 @@ trait BootDashboardSidebar
     {
         return [
             'title' => 'Faqs',
-            'icon' => 'duotune-communication-007',
+            'icon' => 'phosphor-piano-keys-duotone',
             'url'=>'/dashboard/faqs',
             'order' => 800,
         ];
@@ -198,7 +199,7 @@ trait BootDashboardSidebar
     {
         return [
             'title' => 'Contact us',
-            'icon' => 'duotune-communication-010',
+            'icon' => 'phosphor-piano-keys-duotone',
             'order' => 800,
             'url' => '/dashboard/messages',
         ];
@@ -208,7 +209,7 @@ trait BootDashboardSidebar
     {
         return [
             'title' => 'Categories',
-            'icon' => 'duotune-files-001',
+            'icon' => 'phosphor-piano-keys-duotone',
             'order' => 400,
             'url' => '/dashboard/categories',
         ];
@@ -220,7 +221,7 @@ trait BootDashboardSidebar
             'order' => 888,
             'title' => 'Send Notifications',
             'url' => '/dashboard/notification',
-            'icon' => 'duotune-general-016',
+            'icon' => 'phosphor-piano-keys-duotone',
         ];
     }
 }

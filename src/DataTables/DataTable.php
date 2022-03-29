@@ -47,7 +47,7 @@ abstract class DataTable extends BaseDataTable
     protected function getColumns()
     {
         $cols = [
-            Column::make('actions'),
+            Column::make('actions')->exportable(false),
         ];
 
         if (in_array(SoftDeletes::class, class_uses_recursive($this->model))) {

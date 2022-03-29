@@ -2,7 +2,9 @@
 
 <x-dashboard::full :title="$title">
     <x-dashboard::card>
-        {{ $dataTable->table() }}
+        <div class="table-responsive">
+            {{ $dataTable->table() }}
+        </div>
     </x-dashboard::card>
 
     @push('scripts')

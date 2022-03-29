@@ -101,7 +101,7 @@ if (!function_exists('get_setting_group_class')) {
 
         $groupSettings = "${group}Settings";
         $namespace = preg_grep("~${groupSettings}~", config('settings.settings'));
-            // dd($namespace);
+
         if (count($namespace) > 0) {
             return array_values($namespace)[0];
         }
@@ -160,10 +160,9 @@ if (! function_exists('get_dashboard_controller')) {
      */
     function get_dashboard_controller(string $name)
     {
-        // dd("Wrong");
         return class_exists("App\Http\Controllers\Dashboard\\{$name}Controller") ?
             "App\Http\Controllers\Dashboard\\{$name}Controller" :
-            "App\Http\Controllers\\{$name}Controller";
+            "HashStudio\Dashboard\Http\Controllers\Dashboard\\{$name}Controller";
     }
 }
 
@@ -178,7 +177,7 @@ if (! function_exists('get_dashboard_transformer')) {
     {
         return class_exists("App\Transformers\\{$name}Transformer") ?
             "App\Transformers\\{$name}Transformer" :
-            "Level7up\Dashboard\Transformers\\{$name}Transformer";
+            "HashStudio\Dashboard\Transformers\\{$name}Transformer";
     }
 }
 
@@ -202,9 +201,10 @@ if (! function_exists('fractal_response')) {
      *
      * @param mixed $model
      * @param array $includes
+     * @param array $meta
      * @return JsonResponse
      */
-    function fractal_response($model, array $includes = [])
+    function fractal_response($model, array $includes = [], array $meta = null)
     {
         $transformerSuffix = $model;
 
@@ -215,10 +215,16 @@ if (! function_exists('fractal_response')) {
 
         $transformer = get_dashboard_transformer(class_basename($transformerSuffix));
 
-        return fractal(
+        $fractal = fractal(
             $model,
             new $transformer,
-        )->parseIncludes($includes)->respond();
+        )->parseIncludes($includes);
+
+        if ($meta) {
+            $fractal = $fractal->addMeta(['pagination' => $meta]);
+        }
+        
+        return $fractal->respond();
     }
 }
 
@@ -239,5 +245,17 @@ if (! function_exists('api_response')) {
             'data' => $data,
             'status' => $status >= 200 && $status <= 299
         ], $status);
+    }
+}
+
+if (! function_exists('bs_color') ) {
+    /**
+     * Get bootstrap color relative to given id
+     *
+     * @param int $id
+     * @return string
+     */
+    function bs_color(string $id): string {
+        return ['danger', 'info', 'warning', 'success', 'primary'][$id%5];
     }
 }

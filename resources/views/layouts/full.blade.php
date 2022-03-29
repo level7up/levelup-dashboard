@@ -12,8 +12,8 @@
             <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
                 @include('dashboard::sections.full.navbar')
 
-                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-                    @include('dashboard::sections.full.toolbar')
+                <div class="d-flex flex-column flex-column-fluid mt-5" id="kt_content">
+                    {{-- @include('dashboard::sections.full.toolbar') --}}
 
                     <div class="container-xxl">
                         @include('dashboard::sections.full.alerts')

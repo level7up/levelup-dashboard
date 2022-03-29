@@ -2,7 +2,7 @@
 
 @include('dashboard::partials.head')
 
-<body id="kt_body" class="bg-body">
+<body id="kt_body" class="bg-white">
 
     @yield('content')
 

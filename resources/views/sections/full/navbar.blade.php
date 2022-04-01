@@ -1,7 +1,7 @@
 <div id="kt_header" class="header align-items-stretch">
     <div class="header-brand">
         <a href="{{ route('dashboard.home') }}">
-            <img alt="Logo" src="{{ setting('logo', 'square') }}" class="h-25px h-lg-25px" />
+            <img alt="Logo" src="{{ setting('logo', 'square_dark') }}" class="h-25px h-lg-25px" />
         </a>
         <div id="kt_aside_toggle" class="btn btn-icon w-auto px-0 btn-active-color-primary aside-minimize"
             data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body"

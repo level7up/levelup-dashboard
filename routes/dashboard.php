@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Level7up\Dashboard\Http\Controllers\Dashboard;
+use Level7up\Dashboard\Http\Controllers\Dashboard\UsersController;
 
 
 
@@ -12,11 +13,10 @@ if (dashboard_has('user_roles_enabled')) {
         Route::resource('permissions' , Dashboard\PermissionsController::class);
         Route::post('assign-role/{id}' , [get_dashboard_controller("Users"),'updateUserRole'])->name('assignrole');
     }
+Route::resource('users', UsersController::class);
 
 // SETTINGS ----------------------------
-Route::group([
-    'prefix' => 'settings'
-], function(){
+Route::group(['prefix' => 'settings'], function(){
 
     Route::get('logos', [Dashboard\SettingController::class, 'index'])->name('settings.updateLogos');
     Route::post('logos', [Dashboard\SettingController::class, 'updateLogos']);

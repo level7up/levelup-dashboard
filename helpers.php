@@ -162,7 +162,7 @@ if (! function_exists('get_dashboard_controller')) {
     {
         return class_exists("App\Http\Controllers\Dashboard\\{$name}Controller") ?
             "App\Http\Controllers\Dashboard\\{$name}Controller" :
-            "HashStudio\Dashboard\Http\Controllers\Dashboard\\{$name}Controller";
+            "Level7up\Dashboard\Http\Controllers\Dashboard\\{$name}Controller";
     }
 }
 

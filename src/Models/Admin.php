@@ -2,13 +2,16 @@
 
 namespace Level7up\Dashboard\Models;
 
+use Level7up\Dashboard\Models\Behaviors\Editable;
+use Level7up\Dashboard\Models\Behaviors\Viewable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Level7up\Dashboard\Models\Behaviors\HasDashboardAccess;
+
 class Admin extends Authenticatable
 {
-    use HasFactory, HasDashboardAccess;
+    use HasFactory, HasDashboardAccess, Editable, Viewable, SoftDeletes;
 
     protected $base_route = "dashboard.users";
 

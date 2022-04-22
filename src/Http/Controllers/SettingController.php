@@ -1,6 +1,6 @@
 <?php
 
-namespace Level7up\Dashboard\Http\Controllers\Dashboard;
+namespace Level7up\Dashboard\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;

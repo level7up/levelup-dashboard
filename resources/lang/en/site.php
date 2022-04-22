@@ -1,6 +1,6 @@
 <?php
 
-use Level7up\Dashboard\Http\Controllers\Dashboard\FaqController;
+use Level7up\Dashboard\Http\Controllers\FaqController;
 
 return [
     "update" => 'تم التحديث بنجاح',

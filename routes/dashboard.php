@@ -21,6 +21,7 @@ if (dashboard_has('user_roles_enabled')) {
 Route::resource('users', UsersController::class);
 Route::get('admins', [AdminController::class , 'index'])->name('admins');
 Route::get('profile', [AdminProfileController::class , 'index'])->name('profile');
+Route::put('profile', [AdminProfileController::class , 'index'])->name('profile.update');
 
 // SETTINGS ----------------------------
 Route::group(['prefix' => 'settings'], function(){

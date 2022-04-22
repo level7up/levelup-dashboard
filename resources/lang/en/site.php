@@ -8,6 +8,7 @@ return [
         'destroy' => ""
     ],
     'profile' => [
+        'update'=> 'Update Profile',
         'updated' => "Update profile has successfuly",
         'updated_image' => "Update image profile has successfuly",
     ]

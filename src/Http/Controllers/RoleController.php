@@ -82,9 +82,9 @@ class RoleController extends Controller
         // todo: Septate login of API guard from web
         if ($this->guard_name == 'web') {
             $role = Role::where('name', $role->name)
-                ->where('guard_name', 'api')
+                ->where('guard_name', 'web')
                 ->first();
-            $users = $role->users;
+            $users = $role->users ?? [];
             $permissions = $role->permissions;
         } else {
             $users = $role->users;

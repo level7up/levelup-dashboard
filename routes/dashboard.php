@@ -12,12 +12,13 @@ use Level7up\Dashboard\Http\Controllers\AdminProfileController;
 
 
 Route::get('/', [DashboardController::class , 'index'])->name('home');
-
-if (dashboard_has('user_roles_enabled')) {
+Route::group(['prefix' => 'users','as' => 'users.',], function(){
+    if (dashboard_has('user_roles_enabled')) {
         Route::resource('roles' , RoleController::class);
         Route::resource('permissions' , PermissionsController::class);
         Route::post('assign-role/{id}' , [get_dashboard_controller("Users"),'updateUserRole'])->name('assignrole');
     }
+});
 Route::resource('users', UsersController::class);
 Route::get('admins', [AdminController::class , 'index'])->name('admins');
 Route::get('profile', [AdminProfileController::class , 'index'])->name('profile');

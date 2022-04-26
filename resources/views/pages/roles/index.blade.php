@@ -13,9 +13,8 @@
                 <x-dashboard::card flush
                     class="m-1"
                     :title="$role->name">
-
                     <div class="fw-bolder text-gray-600 mb-5">
-                        Total users with this role: {{ $role->users->count() }}
+                        {{-- Total users with this role: {{ $role->users->count()  ??}} --}}
                     </div>
 
                     <div class="d-flex flex-column text-gray-600">

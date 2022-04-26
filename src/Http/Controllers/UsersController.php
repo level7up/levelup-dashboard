@@ -13,8 +13,8 @@ class UsersController extends Controller
     {
         return $dataTable->render('dashboard::pages.users.index');
     }
-    public function show()
-    {
-        abort(403, 'Fuck You.');
-    }
+    // public function show()
+    // {
+    //     abort(403, 'Fuck You.');
+    // }
 }

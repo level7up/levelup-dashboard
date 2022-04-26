@@ -3,8 +3,8 @@
 namespace Level7up\Dashboard\DataTables;
 
 use Yajra\DataTables\Html\Button;
-use Yajra\DataTables\Services\DataTable as BaseDataTable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Yajra\DataTables\Services\DataTable as BaseDataTable;
 use Level7up\Dashboard\Vendor\Yajra\DataTables\Html\Column;
 // use dataTable
 

@@ -4,8 +4,8 @@ namespace Level7up\Dashboard\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Level7up\Dashboard\Http\Controllers\Controller;
-use Level7up\Dashboard\DataTable\PermissionDataTable;
-use Level7up\Dashboard\DataTable\Scopes\GuardPermissions;
+use Level7up\Dashboard\DataTables\PermissionDataTable;
+use Level7up\Dashboard\DataTables\Scopes\GuardPermissions;
 
 class PermissionsController extends Controller
 {

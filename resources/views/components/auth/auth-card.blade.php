@@ -8,7 +8,7 @@
     style="background-color:{{ $color }}">
     <div class="d-flex flex-column position-xl-fixed top-0 bottom-0 w-xl-600px scroll-y">
         <div class="d-flex flex-row-fluid flex-column text-center p-10 pt-lg-20">
-            <a href="{{ route('home') }}" class="py-9 mb-5">
+            <a href="{{ route('dashboard.home') }}" class="py-9 mb-5">
                 <img alt="{{ config('dashboard.name') }}" src="{{ $logo }}" width="200" />
             </a>
             <h1 class="fw-bolder fs-2qx pb-5 pb-md-10" style="color: #000000;">

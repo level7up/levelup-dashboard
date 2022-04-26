@@ -177,7 +177,7 @@ if (! function_exists('get_dashboard_transformer')) {
     {
         return class_exists("App\Transformers\\{$name}Transformer") ?
             "App\Transformers\\{$name}Transformer" :
-            "HashStudio\Dashboard\Transformers\\{$name}Transformer";
+            "Levelup\Dashboard\Transformers\\{$name}Transformer";
     }
 }
 
@@ -189,21 +189,15 @@ if (! function_exists('get_lang')) {
      */
     function get_lang()
     {
+    
         $lang = request()->header('lang', config('app.fallback_locale'));
-
+// dd($lang);
         return in_array($lang, config('app.supported_languages')) ? $lang : config('app.fallback_locale');
     }
 }
 
 if (! function_exists('fractal_response')) {
-    /**
-     * Return api success response
-     *
-     * @param mixed $model
-     * @param array $includes
-     * @param array $meta
-     * @return JsonResponse
-     */
+    
     function fractal_response($model, array $includes = [], array $meta = null)
     {
         $transformerSuffix = $model;
@@ -223,7 +217,7 @@ if (! function_exists('fractal_response')) {
         if ($meta) {
             $fractal = $fractal->addMeta(['pagination' => $meta]);
         }
-        
+
         return $fractal->respond();
     }
 }
@@ -245,6 +239,27 @@ if (! function_exists('api_response')) {
             'data' => $data,
             'status' => $status >= 200 && $status <= 299
         ], $status);
+    }
+}
+
+
+
+
+
+
+
+if (! function_exists('get_api_controller')) {
+    /**
+     * Check and return controller class overridden in base project
+     *
+     * @param string $name
+     * @return string
+     */
+    function get_api_controller(string $name)
+    {
+        return class_exists("App\Http\Controllers\API\\{$name}Controller") ?
+            "App\Http\Controllers\API\\{$name}Controller" :
+            "Levelup\Dashboard\Http\Controllers\API\\{$name}Controller";
     }
 }
 

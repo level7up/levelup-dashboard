@@ -81,13 +81,6 @@ trait BootDashboardSidebar
         }
 
         if (dashboard_has('user_roles_separated')) {
-            $items = Role::where('guard_name', 'web')->pluck('name')->map(function ($name) {
-                return [
-                    'title' => Str::plural($name)." list",
-                    'url' => "/dashboard/users?role=${name}",
-                ];
-            })->toArray();
-        } else {
             $items = [
                 [
                     'title' => "Users list",

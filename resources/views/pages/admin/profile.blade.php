@@ -92,7 +92,7 @@
 
                     </x-dashboard::card.form>
 
-                    <x-dashboard::modal.form :action="route('dashboard.assignrole', $admin->id)" id="assign_role"
+                    {{-- <x-dashboard::modal.form :action="route('dashboard.assignrole', $admin->id)" id="assign_role"
                         title="Assign role for {{ $admin->name }}">
                         <select name="role" class="form-select form-select-solid mb-4">
                             @foreach ($roles as $name)
@@ -100,7 +100,7 @@
                                     {{ $name }}</option>
                             @endforeach
                         </select>
-                    </x-dashboard::modal.form>
+                    </x-dashboard::modal.form> --}}
                 </div>
             </div>
         </div>

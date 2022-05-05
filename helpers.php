@@ -270,7 +270,8 @@ if (! function_exists('bs_color') ) {
      * @param int $id
      * @return string
      */
-    function bs_color(string $id): string {
+    function bs_color($id = 0): string {
         return ['danger', 'info', 'warning', 'success', 'primary'][$id%5];
     }
+
 }

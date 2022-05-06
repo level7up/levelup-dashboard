@@ -1,4 +1,5 @@
 <script src="{{ asset('dashboard/plugins/global/plugins.bundle.js') }}"></script>
+<script src="{{ asset('dashboard/plugins/custom/fslightbox/fslightbox.bundle.js') }}"></script>
 <script src="{{ asset('dashboard/js/scripts.bundle.js') }}"></script>
 <script src="{{ asset('dashboard/plugins/custom/datatables/datatables.bundle.js') }}"></script>
 <script src="{{ asset('dashboard/js/custom/widgets.js') }}"></script>
@@ -7,16 +8,13 @@
 <script src="{{ asset('dashboard/plugins/custom/ckeditor/ckeditor-classic.bundle.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.repeater/1.2.1/jquery.repeater.min.js"
 integrity="sha512-foIijUdV0fR0Zew7vmw98E6mOWd9gkGWQBWaoA1EOFAx+pY+N8FmmtIYAVj64R98KeD2wzZh1aHK0JSpKmRH8w=="
-crossorigin="anonymous"
-referrerpolicy="no-referrer"></script>
-<script src="{{ asset('/dashboard/plugins/custom/formrepeater/formrepeater.bundle.js') }}"
-defer></script>
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{{ asset('/dashboard/plugins/custom/formrepeater/formrepeater.bundle.js') }}" defer></script>
 <script src="{{ asset('/dashboard/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.2/select2.js"
 integrity="sha512-Mvzoyt4FV1aHCRCCF+pXxEi54GK5hO7N6FVL5SYaEBjghkRS0zadyRChyJbsQhEAY6l8S+SR0jXw3a7plFvHPA=="
-crossorigin="anonymous"
-referrerpolicy="no-referrer"></script>
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 @livewireScripts
 @livewireSweetalertScripts

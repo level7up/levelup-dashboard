@@ -11,7 +11,7 @@ use Level7up\Dashboard\Http\Controllers\AdminProfileController;
 
 
 
-Route::get('/', [DashboardController::class , 'index'])->name('home');
+// Route::get('/', [DashboardController::class , 'index'])->name('home');
 Route::group(['prefix' => 'users','as' => 'users.',], function(){
     if (dashboard_has('user_roles_enabled')) {
         Route::resource('roles' , RoleController::class);

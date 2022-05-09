@@ -11,7 +11,7 @@
 ])
 
 <div @class([
-    "card bg-${color} {$attributes->get('class')}",
+    "card m-1 bg-${color} {$attributes->get('class')}",
     'w-100' => $stretch,
     'card-flush' => $flush,
 ]) {{ $attributes->except('class') }}>

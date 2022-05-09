@@ -195,25 +195,10 @@ if (! function_exists('get_lang')) {
         return in_array($lang, config('app.supported_languages')) ? $lang : config('app.fallback_locale');
     }
 }
-if (! function_exists('get_variable_name')) {
-    /**
-     * Get language lang
-     *
-     * @return string
-     */
-    function get_variable_name($var)
-    {
-        foreach($GLOBALS as $varName => $value) {
-            if ($value === $var) {
-                return $varName;
-            }
-        }
-        return;
-    }
-}
+
 
 if (! function_exists('fractal_response')) {
-    
+
     function fractal_response($model, array $includes = [], array $meta = null)
     {
         $transformerSuffix = $model;

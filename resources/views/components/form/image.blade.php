@@ -1,7 +1,11 @@
 @props(['name', 'title' => 'Change image', 'value' => '', 'allowTypes' => 'png, jpg, jpeg, svg, gif'])
-
+@if (!$value)
+    @php
+        $value = asset('dashboard/media/avatars/pets.png');
+    @endphp
+@endif
 <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative mx-5 my-3">
-    <div class="image-input image-input-outline mb-3" data-kt-image-input="true"
+    <div class="image-input image-input-outline mb-3 @error($name) is-invalid @enderror" data-kt-image-input="true"
         style="background-image: url('assets/media/svg/avatars/blank.svg')">
         <div class="image-input-wrapper w-125px h-125px bgi-position-center"
             style="background-size: 75%; background-image: url({{ $value }})">
@@ -12,8 +16,7 @@
             data-bs-original-title="{{ $title }}">
             <i class="bi bi-pencil-fill fs-7"></i>
 
-            <input type="file" name="{{ $name }}" accept=".png, .jpg, .jpeg, .svg"
-                class="@error($name) is-invalid @enderror">
+            <input type="file" name="{{ $name }}" accept=".png, .jpg, .jpeg, .svg">
             <input type="hidden" name="{{ $name }}_remove">
 
         </label>

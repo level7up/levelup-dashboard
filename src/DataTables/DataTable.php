@@ -33,17 +33,22 @@ abstract class DataTable extends BaseDataTable
                     ->dom('Bfrtip')
                     ->orderBy(0)
                     ->buttons(
-                        Button::make(['extend' => 'create', 'action' => "function() { window.location.replace('{$create_route}') }"]),
-                        Button::make('export'),
-                        Button::make('print'),
-                        Button::make('reload'),
+                        $this->getButtons()
                     )
                     ->parameters([
                         'drawCallback' => 'function() { KTMenu.createInstances(); Livewire.rescan(); }',
                     ])
                     ->scrollX($this->scrollX);
     }
-
+    protected function getButtons()
+    {
+        return [
+            Button::make(['extend' => 'create', 'action' => "function() { window.location.replace('{$create_route}') }"]),
+            Button::make('export'),
+            Button::make('print'),
+            Button::make('reload')
+            ];
+    }
     protected function getColumns()
     {
         $cols = [

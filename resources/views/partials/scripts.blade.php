@@ -15,7 +15,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.2/select2.js"
 integrity="sha512-Mvzoyt4FV1aHCRCCF+pXxEi54GK5hO7N6FVL5SYaEBjghkRS0zadyRChyJbsQhEAY6l8S+SR0jXw3a7plFvHPA=="
 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-@livewire('livewire-ui-modal')
 @livewireScripts
 @livewireSweetalertScripts
 

@@ -9,8 +9,7 @@ if (!is_array($value)) {
 <div @class([
     'mb-5' => !$inset,
 ])>
-    <label class="form-label fs-6 fw-bolder text-dark"
-        for="{{ $id }}">
+    <label class="form-label fs-6 fw-bolder text-dark" for="{{ $id }}">
         @if (strlen($slot) > 0)
             {!! $slot !!}
         @else
@@ -18,23 +17,22 @@ if (!is_array($value)) {
         @endif
     </label>
 
-    <select {{ $attributes->merge([
-        'class' => 'form-select form-select-solid',
-        'name' => $name,
-    ]) }}>
+    <select
+        {{ $attributes->merge([
+            'class' => 'form-select form-select-solid',
+            'name' => $name,
+        ]) }}>
         <option disabled>Please select</option>
 
         @foreach ($options as $val => $option)
-            <option value="{{ $val }}"
-                @if (in_array($val, $value)) selected @endif>
+            <option value="{{ $val }}" @if (in_array($val, $value)) selected @endif>
                 {{ $option }}
             </option>
         @endforeach
     </select>
 
     @error($name)
-        <span class="invalid-feedback"
-            role="alert">
+        <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
         </span>
     @enderror

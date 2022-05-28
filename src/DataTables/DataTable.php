@@ -24,7 +24,6 @@ abstract class DataTable extends BaseDataTable
 
     public function html()
     {
-        $create_route = request()->getPathInfo()."/create";
 
         return $this->builder()
                     ->setTableId(uniqid('dt'))
@@ -42,6 +41,8 @@ abstract class DataTable extends BaseDataTable
     }
     protected function getButtons()
     {
+        $create_route = request()->getPathInfo()."/create";
+
         return [
             Button::make(['extend' => 'create', 'action' => "function() { window.location.replace('{$create_route}') }"]),
             Button::make('export'),

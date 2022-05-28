@@ -3,10 +3,10 @@
 @php
 if (!isset($icon)) {
     $icon = [
-        'primary' => 'ri-information-line',
-        'danger' => 'ri-chat-off-line',
+        'primary' => 'phosphor-spinner-gap-duotone',
+        'danger' => 'phosphor-x-circle-light',
         'success' => 'phosphor-checks-duotone',
-        'warning' => 'ri-alarm-warning-line',
+        'warning' => 'phosphor-warning-circle-light',
     ][$color];
 }
 @endphp

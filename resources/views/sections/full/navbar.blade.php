@@ -67,8 +67,8 @@
             </div>
             <div class="d-flex align-items-stretch overflow-auto pt-3 pt-lg-0">
                 <div class="d-flex align-items-center">
-                    <a href="{{ route('dashboard.home') }}" class="btn btn-sm btn-primary btn-hover-rotate-start">
-                        TABANI
+                    <a href="{{ URL::previous() }}" class="btn btn-sm btn-primary btn-hover-rotate-start">
+                        @lang('back')
                     </a>
 
                 </div>

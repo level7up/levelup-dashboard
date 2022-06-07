@@ -7,7 +7,7 @@ use Level7up\Dashboard\DataTables\DataTable;
 use Level7up\Dashboard\Vendor\Yajra\DataTables\Html\Column;
 
 class AdminsDataTable extends DataTable
-{
+{   
     protected $model = Admin::class;
     public function dataTable($query)
     {

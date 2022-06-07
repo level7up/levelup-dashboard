@@ -6,12 +6,13 @@ use Level7up\Dashboard\Http\Controllers\AdminController;
 use Level7up\Dashboard\Http\Controllers\UsersController;
 use Level7up\Dashboard\Http\Controllers\SettingController;
 use Level7up\Dashboard\Http\Controllers\DashboardController;
+use Level7up\Dashboard\Http\Controllers\Auth\LoginController;
 use Level7up\Dashboard\Http\Controllers\PermissionsController;
 use Level7up\Dashboard\Http\Controllers\AdminProfileController;
 
 
 
-// Route::get('/', [DashboardController::class , 'index'])->name('home');
+Route::get('/', [DashboardController::class , 'index'])->name('home');
 Route::group(['prefix' => 'users','as' => 'users.',], function(){
     if (dashboard_has('user_roles_enabled')) {
         Route::resource('roles' , RoleController::class);
@@ -47,3 +48,14 @@ Route::group(['prefix' => 'settings'], function(){
     Route::get('mobile', [SettingController::class, 'mobile'])->name('settings.updateMobile');
     Route::post('mobile', [SettingController::class, 'updateMobile']);
 });
+Route::group(['middleware' => 'guest'],function(){
+    Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('login', [LoginController::class, 'login']);
+    Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+});
+
+
+
+
+
+

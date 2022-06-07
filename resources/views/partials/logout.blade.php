@@ -1,2 +1,2 @@
 <x-dashboard::form id="logoutForm"
-    :action="route('logout')" />
+    :action="route('dashboard.logout')" />

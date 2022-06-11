@@ -78,7 +78,7 @@
                                 {{-- multiple items --}}
                                 <div data-kt-menu-trigger="click" @class([
                                     'menu-item menu-accordion',
-                                    // 'here show' => is_menu_active($menu['items']),
+                                    'here show' => is_menu_active($menu['items']),
                                 ])>
                                     <span class="menu-link">
                                         @svg($menu['icon'], 'menu-icon')
@@ -87,14 +87,14 @@
                                     </span>
                                     <div @class([
                                         'menu-sub menu-sub-accordion',
-                                        // 'menu-active-bg' => is_menu_active($menu['items']),
+                                        'menu-active-bg' => is_menu_active($menu['items']),
                                     ])>
-                                        @foreach ($menu['items'] as $item)
+                                        @foreach (array_filter($menu['items']) as $item)
+                                            @php
+                                                $url = is_array($item['url']) ? $item['url']['href'] : $item['url'];
+                                            @endphp
                                             <div class="menu-item">
-                                                <a @class([
-                                                    'menu-link',
-                                                    // 'active' => is_menu_active($item['url']),
-                                                ]) href="{{ $item['url'] }}">
+                                                <a @class(['menu-link', 'active' => is_menu_active($url)]) href="{{ $url }}">
                                                     <span class="menu-bullet">
                                                         <span class="bullet bullet-dot"></span>
                                                     </span>
@@ -106,12 +106,13 @@
                                 </div>
                             @else
                                 {{-- single item --}}
+                                @php
+                                    $url = is_array($menu['url']) ? $menu['url']['href'] : $menu['url'];
+                                @endphp
+
                                 <div class="menu-item">
-                                    <a @class([
-                                        'menu-link',
-                                        // 'active' => is_menu_active($menu['url']),
-                                    ]) href="{{ $menu['url'] }}">
-                                        @svg($menu['icon'], "menu-icon")
+                                    <a @class(['menu-link', 'active here' => is_menu_active($url)]) href="{{ $url }}">
+                                        @svg($menu['icon'], 'menu-icon')
                                         <span class="menu-title">{{ ucwords($menu['title']) }}</span>
                                     </a>
                                 </div>

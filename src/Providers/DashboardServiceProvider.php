@@ -6,10 +6,11 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
+use Level7up\Dashboard\Util\SideMenuUtil;
 use Level7up\Dashboard\Console\CreateAdmin;
+use Level7up\Dashboard\Providers\Traits\BootSettingsConfig;
 use Level7up\Dashboard\Providers\Traits\BootDashboardSidebar;
 use Level7up\Dashboard\Providers\Traits\BootLivewireComponents;
-use Level7up\Dashboard\Providers\Traits\BootSettingsConfig;
 
 class DashboardServiceProvider extends ServiceProvider
 {   use BootSettingsConfig, BootLivewireComponents, BootDashboardSidebar;
@@ -17,6 +18,7 @@ class DashboardServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../../config/dashboard.php', 'dashboard');
         config(['blade-icons.attributes' => ['width' => 16, 'height' => 16,],]);
+        $this->registerFacades();
     }
 
     public function boot()
@@ -65,4 +67,11 @@ class DashboardServiceProvider extends ServiceProvider
             ]);
         }
     }
+    private function registerFacades()
+    {
+        $this->app->singleton('dashboard-side-menu', function () {
+            return new SideMenuUtil;
+        });
+    }
+
 }

@@ -1,12 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Level7up\Dashboard\Http\Controllers\ChatController;
 use Level7up\Dashboard\Http\Controllers\RoleController;
 use Level7up\Dashboard\Http\Controllers\AdminController;
 use Level7up\Dashboard\Http\Controllers\UsersController;
 use Level7up\Dashboard\Http\Controllers\SettingController;
 use Level7up\Dashboard\Http\Controllers\DashboardController;
-use Level7up\Dashboard\Http\Controllers\Auth\LoginController;
 use Level7up\Dashboard\Http\Controllers\PermissionsController;
 use Level7up\Dashboard\Http\Controllers\AdminProfileController;
 
@@ -49,7 +49,7 @@ Route::group(['prefix' => 'settings'], function(){
     Route::post('mobile', [SettingController::class, 'updateMobile']);
 });
 
-
+Route::get('chat/{id}', [ChatController::class , 'get_chat'])->name('chat');
 
 
 

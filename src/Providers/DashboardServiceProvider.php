@@ -43,6 +43,7 @@ class DashboardServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../../public/assets' => public_path('assets/dashboard'),
             __DIR__ . '/../../public/vendor' => public_path('vendor'),
+            __DIR__ . '/../../public/chat' => public_path('chat'),
         ], 'dashboard-assets');
     }
 

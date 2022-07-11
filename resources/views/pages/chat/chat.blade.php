@@ -1,3 +1,6 @@
+@push('styles')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+@endpush
 <x-dashboard::full title="Chat">
     <x-dashboard::card title="Chat">
 
@@ -23,7 +26,13 @@
                 </div>
             </div>
             <div class="card-footer pt-4" id="kt_drawer_chat_messenger_footer">
-                <input class="border border-1 border-hover-info form-control form-control-flush mb-3" id="chat-input">
+                <div class="input-group mb-5">
+                    <input type="text" class="form-control" placeholder="Username" id="chat-input"/>
+                    <span class="input-group-text" id="basic-addon1">
+                        <x-phosphor-paper-plane-tilt-light />
+                    </span>
+                </div>
+                {{-- <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2"> --}}
             </div>
         </div>
 
@@ -47,6 +56,7 @@
                         const data = {
                             message: message,
                             user_id: user_id,
+                            'user_name': '{{ auth()->user()->name }}'
                         };
                         socket.emit('send', data);
                         chatInput.val('');
@@ -72,9 +82,8 @@
                         </div>
                     </div>`).clone();
                     }else{
-                        console.log(data.user_id);
+                        toastr.success('New message from ' + data.user_name);
                         let userImage = '{{\App\Models\User::find($user->id)->avatar_url}}';
-                        console.log(userImage);
                         $('#receiver').append(`<div class="d-flex justify-content-start mb-10">
                         <div class="d-flex flex-column align-items-start">
                             <div class="p-5 rounded bg-light-info d-flex text-dark fw-semibold text-start"

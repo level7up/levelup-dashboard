@@ -7,12 +7,19 @@
         <div class="card w-100 rounded-0 border-0" id="kt_drawer_chat_messenger">
             <div class="card-header pe-5" id="kt_drawer_chat_messenger_header">
                 <div class="card-title">
-                    <div class="d-flex justify-content-center flex-column me-3">
-                        <a href="#" class="fs-4 fw-bold text-gray-900 text-hover-primary me-1 mb-2 lh-1">{{$user->name}}</a>
-                        {{-- <div class="mb-0 lh-1">
-                            <span class="badge badge-success badge-circle w-10px h-10px me-1"></span>
-                            <span class="fs-7 fw-semibold text-muted">Active</span>
-                        </div> --}}
+                    <div class="d-flex">
+                        <div class="col-md-3">
+                            <div class="symbol symbol-35px symbol-circle">
+                                <img alt="Pic" src="{{auth()->user()->avatar_url}}">
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <a href="#" class="fs-4 fw-bold text-gray-900 text-hover-primary me-1 mb-2 lh-1">{{$user->name}}</a>
+                            <div class="mb-0 lh-1">
+                                <span class="badge badge-success badge-circle w-10px h-10px me-1"></span>
+                                <span class="fs-7 fw-semibold text-muted">Active</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

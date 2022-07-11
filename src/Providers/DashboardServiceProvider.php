@@ -49,6 +49,13 @@ class DashboardServiceProvider extends ServiceProvider
     private function registerRoutes()
     {
         Route::group([
+            'middleware' => ['web'],
+            'prefix' => 'dashboard',
+            'as' => 'dashboard.',
+        ], function () {
+            $this->loadRoutesFrom(__DIR__.'/../../routes/auth.php');
+        });
+        Route::group([
             'middleware' => ['web', 'auth:admin'],
             'prefix' => 'dashboard',
             'as' => 'dashboard.',

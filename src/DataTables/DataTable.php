@@ -44,7 +44,7 @@ abstract class DataTable extends BaseDataTable
         $create_route = request()->getPathInfo()."/create";
 
         return [
-            Button::make(['extend' => 'create', 'action' => "function() { window.location.replace('{$create_route}') }"]),
+            // Button::make(['extend' => 'create', 'action' => "function() { window.location.replace('{$create_route}') }"]),
             Button::make('export'),
             Button::make('print'),
             Button::make('reload')

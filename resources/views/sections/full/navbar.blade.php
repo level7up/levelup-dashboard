@@ -54,7 +54,7 @@
             <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
                 class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                 <!--begin::Title-->
-                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1" style="margin-right: 1.25rem">
+                {{-- <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1" style="margin-right: 1.25rem">
                     {{ $title }}
                 </h1>
                 <!--end::Title-->
@@ -67,14 +67,14 @@
                             </li>
                         @endunless
                     @endforeach
-                </ul>
+                </ul> --}}
             </div>
             <div class="d-flex align-items-stretch overflow-auto pt-3 pt-lg-0">
                 <div class="d-flex align-items-center">
                     {{-- <a href="{{ URL::previous() }}" class="btn btn-sm btn-primary btn-hover-rotate-start">
                         @lang('Back')
                     </a> --}}
-                    <div class="me-n2">
+                    <div class="">
                         <a href="#" class="btn btn-icon btn-sm btn-active-color-primary mt-n2"
                             data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end"
                             data-kt-menu-overflow="true">

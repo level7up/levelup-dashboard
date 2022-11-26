@@ -1,4 +1,4 @@
-{{-- <div class="toolbar bg-white p-5 mb-1" id="hash_full_toolbar">
+<div class="toolbar bg-white p-5 mb-1" id="hash_full_toolbar">
     <!--begin::Container-->
     <div id="hash_full_toolbar_container" class="container-fluid d-flex flex-stack">
         <!--begin::Page title-->
@@ -11,7 +11,7 @@
             </h1>
             <!--end::Title-->
 
-            <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+            {{-- <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                 @foreach (explode('/', request()->route()->uri) as $item)
                     @unless(in_array($item, ['dashboard']) || Str::startsWith($item, '{'))
                         <li class="breadcrumb-item text-muted">
@@ -19,7 +19,7 @@
                         </li>
                     @endunless
                 @endforeach
-            </ul>
+            </ul> --}}
         </div>
         <!--end::Page title-->
 
@@ -30,4 +30,4 @@
         @endisset
     </div>
     <!--end::Container-->
-</div> --}}
+</div>

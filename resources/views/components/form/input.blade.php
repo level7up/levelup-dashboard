@@ -7,13 +7,13 @@
         @if (strlen($slot) > 0)
             {!! $slot !!}
         @else
-            {{ ucfirst($name) }}
+            {{ __($name) }}
         @endif
     </label>
 
     <input id="{{ $id }}" {{ $attributes->except(['class']) }} type="{{ $type }}"
         name="{{ $name }}" value="{{ $value }}" @if ($required) required @endif
-        autocomplete="off" placeholder="{{ $placeholder }}"
+        autocomplete="off" placeholder="{{ __($placeholder) }}"
         class="form-control form-control-lg form-control-solid 
         @error($name) is-invalid @enderror
         " />

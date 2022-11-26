@@ -1,7 +1,7 @@
 @props(['name', 'title' => 'Change image', 'value' => '', 'allowTypes' => 'png, jpg, jpeg, svg, gif'])
 @if (!$value)
     @php
-        $value = asset('dashboard/media/avatars/pets.png');
+        $value = asset('dashboard/media/svgs/upload-12.svg');
     @endphp
 @endif
 <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative mx-5 my-3">

@@ -13,7 +13,7 @@
                 @include('dashboard::sections.full.navbar')
 
                 <div class="d-flex flex-column flex-column-fluid mt-5" id="kt_content">
-                    {{-- @include('dashboard::sections.full.toolbar') --}}
+                    @include('dashboard::sections.full.toolbar')
 
                     <div class="container-xxl">
                         @include('dashboard::sections.full.alerts')

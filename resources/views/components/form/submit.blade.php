@@ -8,6 +8,6 @@
     @if (strlen($slot) > 0)
         {!! $slot !!}
     @else
-        Save
+        @lang("Save")
     @endif
 </x-dashboard::btn>

@@ -23,7 +23,7 @@
             <div class="modal-footer">
                 <x-dashboard::btn color="danger"
                     data-bs-dismiss="modal">
-                    Cancel
+                    @lang("Cancel")
                 </x-dashboard::btn>
                 @isset($footer)
                     {!! $footer !!}

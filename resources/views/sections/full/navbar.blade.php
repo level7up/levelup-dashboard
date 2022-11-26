@@ -7,8 +7,10 @@
             data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body"
             data-kt-toggle-name="aside-minimize">
             <span class="svg-icon svg-icon-1 me-n1 minimize-default">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <rect opacity="0.3" x="8.5" y="11" width="12" height="2" rx="1" fill="black" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none">
+                    <rect opacity="0.3" x="8.5" y="11" width="12" height="2" rx="1"
+                        fill="black" />
                     <path
                         d="M10.3687 11.6927L12.1244 10.2297C12.5946 9.83785 12.6268 9.12683 12.194 8.69401C11.8043 8.3043 11.1784 8.28591 10.7664 8.65206L7.84084 11.2526C7.39332 11.6504 7.39332 12.3496 7.84084 12.7474L10.7664 15.3479C11.1784 15.7141 11.8043 15.6957 12.194 15.306C12.6268 14.8732 12.5946 14.1621 12.1244 13.7703L10.3687 12.3073C10.1768 12.1474 10.1768 11.8526 10.3687 11.6927Z"
                         fill="black" />
@@ -18,9 +20,10 @@
                 </svg>
             </span>
             <span class="svg-icon svg-icon-1 minimize-active">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <rect opacity="0.3" width="12" height="2" rx="1" transform="matrix(-1 0 0 1 15.5 11)"
-                        fill="black" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none">
+                    <rect opacity="0.3" width="12" height="2" rx="1"
+                        transform="matrix(-1 0 0 1 15.5 11)" fill="black" />
                     <path
                         d="M13.6313 11.6927L11.8756 10.2297C11.4054 9.83785 11.3732 9.12683 11.806 8.69401C12.1957 8.3043 12.8216 8.28591 13.2336 8.65206L16.1592 11.2526C16.6067 11.6504 16.6067 12.3496 16.1592 12.7474L13.2336 15.3479C12.8216 15.7141 12.1957 15.6957 11.806 15.306C11.3732 14.8732 11.4054 14.1621 11.8756 13.7703L13.6313 12.3073C13.8232 12.1474 13.8232 11.8526 13.6313 11.6927Z"
                         fill="black" />
@@ -33,7 +36,8 @@
         <div class="d-flex align-items-center d-lg-none ms-n3 me-1" title="Show aside menu">
             <div class="btn btn-icon btn-active-color-primary w-30px h-30px" id="kt_aside_mobile_toggle">
                 <span class="svg-icon svg-icon-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none">
                         <path d="M21 7H3C2.4 7 2 6.6 2 6V4C2 3.4 2.4 3 3 3H21C21.6 3 22 3.4 22 4V6C22 6.6 21.6 7 21 7Z"
                             fill="black" />
                         <path opacity="0.3"
@@ -67,9 +71,27 @@
             </div>
             <div class="d-flex align-items-stretch overflow-auto pt-3 pt-lg-0">
                 <div class="d-flex align-items-center">
-                    <a href="{{ URL::previous() }}" class="btn btn-sm btn-primary btn-hover-rotate-start">
-                        @lang('back')
-                    </a>
+                    {{-- <a href="{{ URL::previous() }}" class="btn btn-sm btn-primary btn-hover-rotate-start">
+                        @lang('Back')
+                    </a> --}}
+                    <div class="me-n2">
+                        <a href="#" class="btn btn-icon btn-sm btn-active-color-primary mt-n2"
+                            data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end"
+                            data-kt-menu-overflow="true">
+                            <span class="svg-icon svg-icon-muted svg-icon-1">
+                                @svg('phosphor-globe-duotone')
+                            </span>
+                        </a>
+                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px"
+                            data-kt-menu="true">
+                            <div class="menu-item px-3">
+                                @foreach (config('app.supported_languages') as $lang)
+                                    <x-dashboard::dropdown.item :title="$lang" :href="route('dashboard.language', ['lang' => $lang])" />
+                                    <x-dashboard::dropdown.divider />
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -78,7 +100,5 @@
 </div>
 
 @push('scripts')
-    <script>
-
-    </script>
+    <script></script>
 @endpush

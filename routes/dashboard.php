@@ -10,21 +10,18 @@ use Level7up\Dashboard\Http\Controllers\DashboardController;
 use Level7up\Dashboard\Http\Controllers\PermissionsController;
 use Level7up\Dashboard\Http\Controllers\AdminProfileController;
 
-
-
 Route::get('/', [DashboardController::class , 'index'])->name('home');
-Route::group(['prefix' => 'users','as' => 'users.',], function(){
+Route::group(['prefix' => 'users','as' => 'users.',], function () {
     if (dashboard_has('user_roles_enabled')) {
-        Route::resource('roles' , RoleController::class);
-        Route::resource('permissions' , PermissionsController::class);
-        Route::post('assign-role/{id}' , [get_dashboard_controller("Users"),'updateUserRole'])->name('assignrole');
+        Route::resource('roles', RoleController::class);
+        Route::resource('permissions', PermissionsController::class);
+        Route::post('assign-role/{id}', [get_dashboard_controller("Users"),'updateUserRole'])->name('assignrole');
     }
 });
-Route::group(['prefix' => 'admins','as' => 'admins.',], function(){
-        Route::resource('roles' , RoleController::class);
-        Route::resource('permissions' , PermissionsController::class);
-        Route::post('assign-role/{id}' , [get_dashboard_controller("Users"),'updateUserRole'])->name('assignrole');
-    
+Route::group(['prefix' => 'admins','as' => 'admins.',], function () {
+    Route::resource('roles', RoleController::class);
+    Route::resource('permissions', PermissionsController::class);
+    Route::post('assign-role/{id}', [get_dashboard_controller("Users"),'updateUserRole'])->name('assignrole');
 });
 Route::resource('users', UsersController::class);
 Route::get('admins', [AdminController::class , 'index'])->name('admins');
@@ -32,10 +29,10 @@ Route::get('profile', [AdminProfileController::class , 'index'])->name('profile'
 Route::put('profile', [AdminProfileController::class , 'index'])->name('profile.update');
 
 // SETTINGS ----------------------------
-Route::group(['prefix' => 'settings'], function(){
-
+Route::group(['prefix' => 'settings'], function () {
     Route::get('logos', [SettingController::class, 'index'])->name('settings.updateLogos');
     Route::post('logos', [SettingController::class, 'updateLogos']);
+    Route::get('/languages', [SettingController::class, 'lang'])->name('language');
 
     Route::post('setDefaultlogo/{key}', [SettingController::class, 'setDefaultLogo'])->name('settings.defaultLogo');
 
@@ -50,7 +47,3 @@ Route::group(['prefix' => 'settings'], function(){
 });
 
 Route::get('chat/{id}', [ChatController::class , 'get_chat'])->name('chat');
-
-
-
-

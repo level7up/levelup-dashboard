@@ -3,6 +3,7 @@
 namespace Level7up\Dashboard\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Storage;
 use Level7up\Dashboard\Settings\LogoSettings;
 use Level7up\Dashboard\Settings\MobileSettings;
@@ -44,7 +45,7 @@ class SettingController extends Controller
 
     public function general(GeneralSettings $general, $locale)
     {
-        return view('dashboard::pages.settings.general',[
+        return view('dashboard::pages.settings.general', [
                     'general' =>$general,
                     'locale' => $locale
                 ]);
@@ -125,5 +126,11 @@ class SettingController extends Controller
         $mobile->save();
 
         return $this->successRedirect('dashboard.settings.updateMobile', trans("dashboard::messages.setting.updateMobile"));
+    }
+
+    public function lang(Request $request)
+    {
+        session(['lang' => $request->lang]);
+        return \redirect()->back();
     }
 }

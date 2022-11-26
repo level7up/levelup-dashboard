@@ -13,7 +13,10 @@ use Level7up\Dashboard\Providers\Traits\BootDashboardSidebar;
 use Level7up\Dashboard\Providers\Traits\BootLivewireComponents;
 
 class DashboardServiceProvider extends ServiceProvider
-{   use BootSettingsConfig, BootLivewireComponents, BootDashboardSidebar;
+{
+    use BootSettingsConfig;
+    use BootLivewireComponents;
+    use BootDashboardSidebar;
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../../config/dashboard.php', 'dashboard');
@@ -31,8 +34,9 @@ class DashboardServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->registerCommands();
-            $this->configurePublishing();;
-        }else {
+            $this->configurePublishing();
+            ;
+        } else {
             $this->bootSettingsConfig();
             $this->bootDashboardSidebar();
             $this->bootLivewireComponents();
@@ -78,8 +82,7 @@ class DashboardServiceProvider extends ServiceProvider
     private function registerFacades()
     {
         $this->app->singleton('dashboard-side-menu', function () {
-            return new SideMenuUtil;
+            return new SideMenuUtil();
         });
     }
-
 }

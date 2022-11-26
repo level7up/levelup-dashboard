@@ -72,8 +72,7 @@
                         id="#kt_aside_menu" data-kt-menu="true">
                         @foreach (Arr::sort(config('dashboard.sidebar'), function ($menu) {
         return $menu['order'] ?? 99999;
-    })
-    as $menu)
+    }) as $menu)
                             @isset($menu['items'])
                                 {{-- multiple items --}}
                                 <div data-kt-menu-trigger="click" @class([
@@ -82,7 +81,7 @@
                                 ])>
                                     <span class="menu-link">
                                         @svg($menu['icon'], 'menu-icon')
-                                        <span class="menu-title">{{ $menu['title'] }}</span>
+                                        <span class="menu-title">{{ trans($menu['title']) }}</span>
                                         <span class="menu-arrow"></span>
                                     </span>
                                     <div @class([
@@ -113,7 +112,7 @@
                                 <div class="menu-item">
                                     <a @class(['menu-link', 'active here' => is_menu_active($url)]) href="{{ $url }}">
                                         @svg($menu['icon'], 'menu-icon')
-                                        <span class="menu-title">{{ ucwords($menu['title']) }}</span>
+                                        <span class="menu-title">{{ trans($menu['title']) }}</span>
                                     </a>
                                 </div>
                             @endisset

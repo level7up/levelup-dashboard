@@ -17,6 +17,7 @@
     <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/60x60.png') }}" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
 
     <link href="{{ asset('dashboard/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('dashboard/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
@@ -31,6 +32,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="{{ asset('dashboard/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet"
         type="text/css" />
+
     @stack('styles')
 
     @livewireStyles

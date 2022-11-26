@@ -106,7 +106,7 @@ if (!function_exists('get_setting_group_class')) {
             return array_values($namespace)[0];
         }
 
-        throw new Spatie\LaravelSettings\Exceptions\MissingSettings();
+        // throw new Spatie\LaravelSettings\Exceptions\MissingSettings();
     }
 }
 
@@ -189,16 +189,13 @@ if (! function_exists('get_lang')) {
      */
     function get_lang()
     {
-    
         $lang = request()->header('lang', config('app.fallback_locale'));
-// dd($lang);
         return in_array($lang, config('app.supported_languages')) ? $lang : config('app.fallback_locale');
     }
 }
 
 
 if (! function_exists('fractal_response')) {
-
     function fractal_response($model, array $includes = [], array $meta = null)
     {
         $transformerSuffix = $model;
@@ -212,7 +209,7 @@ if (! function_exists('fractal_response')) {
 
         $fractal = fractal(
             $model,
-            new $transformer,
+            new $transformer(),
         )->parseIncludes($includes);
 
         if ($meta) {
@@ -264,15 +261,15 @@ if (! function_exists('get_api_controller')) {
     }
 }
 
-if (! function_exists('bs_color') ) {
+if (! function_exists('bs_color')) {
     /**
      * Get bootstrap color relative to given id
      *
      * @param int $id
      * @return string
      */
-    function bs_color($id = 0): string {
+    function bs_color($id = 0): string
+    {
         return ['danger', 'info', 'warning', 'success', 'primary'][$id%5];
     }
-
 }

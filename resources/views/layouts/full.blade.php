@@ -1,5 +1,13 @@
 <html lang="en">
 @include('dashboard::partials.head')
+@if (app()->getLocale() == 'ar')
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+
+        }
+    </style>
+@endif
 
 <body id="kt_body"
     class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed"
@@ -21,6 +29,7 @@
                         @yield('content')
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

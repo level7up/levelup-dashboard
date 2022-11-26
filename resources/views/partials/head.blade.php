@@ -33,6 +33,11 @@
     <link href="{{ asset('dashboard/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet"
         type="text/css" />
 
+    @if (app()->getLocale() == 'ar')
+        <link href="{{ asset('dashboard/css/style.bundle.rtl.css') }}" rel="stylesheet" type="text/css" />
+    @endif
+
+
     @stack('styles')
 
     @livewireStyles

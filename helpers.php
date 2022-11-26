@@ -50,6 +50,7 @@ if (!function_exists('setting')) {
         if (is_array($settingClass->$name) && isset($settingClass->$name[get_lang()])) {
             return $settingClass->$name[get_lang()];
         }
+        
 
         return $settingClass->$name;
     }
@@ -98,7 +99,6 @@ if (!function_exists('get_setting_group_class')) {
         $group = implode('', array_map(function ($group_piece) {
             return ucfirst($group_piece);
         }, explode('_', $group)));
-
         $groupSettings = "${group}Settings";
         $namespace = preg_grep("~${groupSettings}~", config('settings.settings'));
 

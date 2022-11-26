@@ -3,7 +3,7 @@
 <script src="{{ asset('dashboard/js/scripts.bundle.js') }}"></script>
 <script src="{{ asset('dashboard/plugins/custom/datatables/datatables.bundle.js') }}"></script>
 <script src="{{ asset('dashboard/js/custom/widgets.js') }}"></script>
-<script src="{{ '/vendor/datatables/buttons.server-side.js' }}"></script>
+<script src="{{ asset('dashboard/vendor/datatables/buttons.server-side.js') }}"></script>
 <script src="https://cdn.ckeditor.com/4.11.3/standard/ckeditor.js"></script>
 <script src="{{ asset('dashboard/plugins/custom/ckeditor/ckeditor-classic.bundle.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.repeater/1.2.1/jquery.repeater.min.js"

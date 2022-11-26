@@ -7,14 +7,14 @@
             <div class="aside-toolbar flex-column-auto" id="kt_aside_toolbar">
                 <div class="aside-user d-flex align-items-sm-center justify-content-center py-5">
                     <div class="symbol symbol-50px">
-                        <img src="{{ Auth::user()->avatar_url }}" alt="" />
+                        <img src="{{ Auth::guard('admin')->user()->avatar_url }}" alt="" />
                     </div>
                     <div class="aside-user-info flex-row-fluid flex-wrap ms-5">
                         <div class="d-flex">
                             <div class="flex-grow-1 me-2">
                                 <a href="#"
-                                    class="text-white text-hover-primary fs-6 fw-bold">{{ Auth::user()->name }}</a>
-                                <span class="text-gray-600 fw-bold d-block fs-8 mb-1">{{ Auth::user()->email }}</span>
+                                    class="text-white text-hover-primary fs-6 fw-bold">{{Auth::guard('admin')->user()->name }}</a>
+                                <span class="text-gray-600 fw-bold d-block fs-8 mb-1">{{Auth::guard('admin')->user()->email }}</span>
                             </div>
                             <div class="me-n2">
                                 <a href="#" class="btn btn-icon btn-sm btn-active-color-primary mt-n2"
@@ -37,18 +37,18 @@
                                     <div class="menu-item px-3">
                                         <div class="menu-content d-flex align-items-center px-3">
                                             <div class="symbol symbol-50px me-5">
-                                                <img alt="{{ Auth::user()->name }}"
-                                                    src="{{ Auth::user()->avatar_url }}" />
+                                                <img alt="{{Auth::guard('admin')->user()->name }}"
+                                                    src="{{Auth::guard('admin')->user()->avatar_url }}" />
                                             </div>
                                             <div class="d-flex flex-column">
                                                 <div class="fw-bolder d-flex align-items-center fs-5">
-                                                    {{ Auth::user()->name }}
+                                                    {{Auth::guard('admin')->user()->name }}
                                                 </div>
-                                                <div class="fw-bold text-muted fs-7">{{ Auth::user()->email }}</div>
+                                                <div class="fw-bold text-muted fs-7">{{Auth::guard('admin')->user()->email }}</div>
                                             </div>
                                         </div>
                                         <x-dashboard::dropdown.divider></x-dashboard::dropdown.divider>
-                                        <x-dashboard::dropdown.item title="Account Settings" :href="route('dashboard.profile', Auth::user()->id)" />
+                                        <x-dashboard::dropdown.item title="Account Settings" :href="route('dashboard.profile',Auth::guard('admin')->user()->id)" />
                                         <x-dashboard::dropdown.item title="Logout"
                                             onclick="document.getElementById('logoutForm').submit();" />
 

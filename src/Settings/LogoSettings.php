@@ -15,7 +15,6 @@ class LogoSettings extends Settings
 
     public static function group(): string
     {
-        // dd("HERE");
         return 'logo';
     }
 

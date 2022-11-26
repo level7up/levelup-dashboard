@@ -63,9 +63,9 @@ abstract class DataTable extends BaseDataTable
         return $cols;
     }
 
-    protected function getRawColumns()
+    protected function getRawColumns($columns = [])
     {
-        return ['status_action', 'actions'];
+        return array_merge(['status_action', 'actions'], $columns);
     }
 
     protected function filename()

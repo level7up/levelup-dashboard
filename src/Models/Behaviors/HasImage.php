@@ -8,6 +8,6 @@ trait HasImage
         if($this->image){
             return asset('../storage/'.$this->image);
         }
-        return asset('assets/dashboard/media/avatars/blank.png');
+        return asset('dashboard/media/avatars/blank.png');
     }
 }

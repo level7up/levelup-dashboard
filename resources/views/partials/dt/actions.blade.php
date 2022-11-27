@@ -1,11 +1,10 @@
 <x-dashboard::dropdown.menu placement="bottom-start"
     title="Action">
-
     @if ($model->viewRoute)
     <x-dashboard::dropdown.item title="View"
         :href="$model->viewRoute" />
     @endif
-
+    
     @if ($model->editRoute)
         <x-dashboard::dropdown.item title="Edit"
             :href="$model->editRoute" />

@@ -22,7 +22,7 @@ if (!is_array($value)) {
             'class' => 'form-select form-select-solid',
             'name' => $name,
         ]) }}>
-        <option disabled>Please select</option>
+        <option disabled selected>Please select</option>
 
         @foreach ($options as $val => $option)
             <option value="{{ $val }}" @if (in_array($val, $value)) selected @endif>

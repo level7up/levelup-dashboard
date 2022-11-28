@@ -1,17 +1,20 @@
 @props(['title', 'icon', 'color' => 'primary'])
 
 @php
-if (!isset($icon)) {
-    $icon = [
-        'primary' => 'phosphor-spinner-gap-duotone',
-        'danger' => 'phosphor-x-circle-light',
-        'success' => 'phosphor-checks-duotone',
-        'warning' => 'phosphor-warning-circle-light',
-    ][$color];
-}
+    if (!isset($icon)) {
+        $icon = [
+            'primary' => 'phosphor-spinner-gap-duotone',
+            'danger' => 'phosphor-x-circle-light',
+            'success' => 'phosphor-checks-duotone',
+            'warning' => 'phosphor-warning-circle-light',
+        ][$color];
+    }
 @endphp
 
-<div class="alert alert-dismissible bg-{{ $color }} d-flex flex-column flex-sm-row p-5 mb-10 align-items-center">
+<div
+    {{ $attributes->merge([
+        'class' => "alert alert-dismissible bg-$color  d-flex flex-column flex-sm-row p-5 mb-10 align-items-center",
+    ]) }}>
     @isset($icon)
         <span class="svg-icon svg-icon-2hx svg-icon-light me-4 mb-5 mb-sm-0">
             @svg($icon, 'text-light')

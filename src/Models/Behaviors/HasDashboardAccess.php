@@ -8,7 +8,6 @@ trait HasDashboardAccess
     {
         if ($original) {
             return "/storage/avatars/".$original;
-            dd($original);
         }
 
         return asset('dashboard/media/avatars/blank.png');

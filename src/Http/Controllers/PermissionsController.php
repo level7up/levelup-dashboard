@@ -9,32 +9,32 @@ use Level7up\Dashboard\DataTables\Scopes\GuardPermissions;
 
 class PermissionsController extends Controller
 {
-    public $route_group;
-    protected $guard_name;
+    // public $route_group;
+    // protected $guard_name;
 
-    function __construct(Request $request)
-    {
-        $this->setGuardName($request)
-            ->setRouteGroup();
-    }
+    // function __construct(Request $request)
+    // {
+    //     $this->setGuardName($request)
+    //         ->setRouteGroup();
+    // }
 
-    private function setGuardName($request)
-    {
-        $this->guard_name = (explode("/", $request->route()->uri)[1] ?? '') == 'admins' ? 'admin' : 'web';
+    // private function setGuardName($request)
+    // {
+    //     $this->guard_name = (explode("/", $request->route()->uri)[1] ?? '') == 'admins' ? 'admin' : 'web';
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
-    private function setRouteGroup()
-    {
-        $this->route_group = $this->guard_name == 'admin' ? 'admins' : 'users';
+    // private function setRouteGroup()
+    // {
+    //     $this->route_group = $this->guard_name == 'admin' ? 'admins' : 'users';
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
-    public function index(PermissionDataTable $dt)
-    {
-        return $dt->addScope(new GuardPermissions($this->guard_name))
-            ->render('dashboard::pages.permissions.index');
-    }
+    // public function index(PermissionDataTable $dt)
+    // {
+    //     return $dt->addScope(new GuardPermissions($this->guard_name))
+    //         ->render('dashboard::pages.permissions.index');
+    // }
 }

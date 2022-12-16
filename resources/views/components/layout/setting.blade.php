@@ -1,7 +1,6 @@
 @props(['title', 'route', 'locale' => 'en'])
 
 <x-dashboard::full title="Home Settings">
-
     <x-dashboard::card class="mb-9 pb-0" body-class="pt-9 pb-0">
         <div class="d-flex flex-wrap flex-sm-nowrap mb-6">
             <div
@@ -61,9 +60,6 @@
             <!--end::Nav item-->
         </ul>
     </x-dashboard::card>
-
-    {{-- body --}}
-    {{-- class="p-9" --}}
     <x-dashboard::form :action="route($route)" enctype="multipart/form-data">
         <x-dashboard::card>
             <x-slot name="header">

@@ -51,7 +51,6 @@ if (!function_exists('setting')) {
             return $settingClass->$name[get_lang()];
         }
         
-
         return $settingClass->$name;
     }
 }

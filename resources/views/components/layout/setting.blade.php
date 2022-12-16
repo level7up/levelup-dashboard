@@ -51,12 +51,12 @@
                 ]) href="{{ route('dashboard.settings.updateSocial') }}">
                     Social Settings
                 </a>
-                <a @class([
+                {{-- <a @class([
                     'nav-link text-active-primary py-5 me-6',
                     'active' => $route == 'dashboard.settings.updateMobile',
                 ]) href="{{ route('dashboard.settings.updateMobile') }}">
                     Mobile Settings
-                </a>
+                </a> --}}
             </li>
             <!--end::Nav item-->
         </ul>

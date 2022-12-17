@@ -8,7 +8,7 @@ trait UploadFiles {
      * @return string
      */
     
-    public function uploadImageAndReturnName($request, $file,  $path, $defImg=null) :string
+     public function uploadImageAndReturnName($request, $file,  $path, $defImg='null') :string
     {
         if ($request->hasFile($file)) {
             $image = $request->file($file);

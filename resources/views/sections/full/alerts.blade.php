@@ -1,13 +1,13 @@
 @php
 $alertColors = ['success' => 'success', 'error' => 'danger'];
 @endphp
-{{-- 
+
 @if ($errors->any())
     @foreach ($errors->all() as $error)
         <x-dashboard::alert color="danger"
             :title="$error" />
     @endforeach
-@endif --}}
+@endif
 
 @foreach (['success', 'error'] as $key)
     @if (session()->has($key))

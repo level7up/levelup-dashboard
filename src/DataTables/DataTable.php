@@ -57,7 +57,7 @@ abstract class DataTable extends BaseDataTable
         ];
 
         if (in_array(SoftDeletes::class, class_uses_recursive($this->model))) {
-            array_unshift($cols, Column::make('status_action')->title("Status"));
+            array_unshift($cols, Column::make('status_action')->title("Active"));
         }
 
         return $cols;

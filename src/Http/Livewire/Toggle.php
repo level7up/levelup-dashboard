@@ -27,8 +27,9 @@ class Toggle extends Component
 
     public function render()
     {
-        if ($this->prop == 'deleted_at_reversed') {
-            $this->checked = $this->model->deleted_at != null;
+       
+        if (in_array($this->prop ,['deleted_at_reversed','deleted_at'])) {
+            $this->checked = $this->model->deleted_at == null;
         } else {
             $this->checked = $this->model->{$this->prop};
         }

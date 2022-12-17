@@ -30,7 +30,7 @@
         <div class="separator"></div>
 
         <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bolder">
-            <!--begin::Nav item-->
+            
             <li class="nav-item">
                 <a @class([
                     'nav-link text-active-primary py-5 me-6',
@@ -57,7 +57,7 @@
                     Mobile Settings
                 </a> --}}
             </li>
-            <!--end::Nav item-->
+            
         </ul>
     </x-dashboard::card>
     <x-dashboard::form :action="route($route)" enctype="multipart/form-data">

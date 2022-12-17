@@ -53,11 +53,11 @@
             class="container-fluid py-6 py-lg-0 d-flex flex-column flex-lg-row align-items-lg-stretch justify-content-lg-between">
             <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
                 class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
-                <!--begin::Title-->
+                
                 {{-- <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1" style="margin-right: 1.25rem">
                     {{ $title }}
                 </h1>
-                <!--end::Title-->
+                
 
                 <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                     @foreach (explode('/', request()->route()->uri) as $item)

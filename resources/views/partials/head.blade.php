@@ -21,17 +21,18 @@
 
     <link href="{{ asset('dashboard/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
     @if (app()->getLocale() == 'ar')
-    <link href="{{ asset('dashboard/css/style.bundle.rtl.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('dashboard/css/style.bundle.rtl.css') }}" rel="stylesheet" type="text/css" />
         <style>
             .d-flex {
                 direction: rtl !important;
             }
+
             .aside-menu .menu .menu-item .menu-link .menu-title {
                 font-size: large;
             }
         </style>
     @else
-    <link href="{{ asset('dashboard/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('dashboard/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
     @endif
     {{-- <link href="{{ asset('dashboard/css/app.css') }}" rel="stylesheet" type="text/css" /> --}}
 
@@ -44,10 +45,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="{{ asset('dashboard/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet"
         type="text/css" />
-
-   
-
-
     @stack('styles')
 
     @livewireStyles

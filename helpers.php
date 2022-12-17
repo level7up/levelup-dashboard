@@ -239,12 +239,6 @@ if (! function_exists('api_response')) {
     }
 }
 
-
-
-
-
-
-
 if (! function_exists('get_api_controller')) {
     /**
      * Check and return controller class overridden in base project
@@ -270,5 +264,15 @@ if (! function_exists('bs_color')) {
     function bs_color($id = 0): string
     {
         return ['danger', 'info', 'warning', 'success', 'primary'][$id%5];
+    }
+}
+
+if(! function_exists('rand_abstract')){
+
+    function rand_abstract($is_dark = null){
+        if(is_null($is_dark)){
+            return asset('dashboard/media/svg/shapes/abstract-'.rand(1,5).'.svg');
+        }
+        return asset('dashboard/media/svg/shapes/abstract-'.rand(1,5).'-dark.svg');
     }
 }

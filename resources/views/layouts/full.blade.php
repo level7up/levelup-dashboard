@@ -6,7 +6,7 @@
     style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
 
     <div class="d-flex flex-column flex-root">
-        <!--begin::Page-->
+        
         <div class="page flex-row flex-column-fluid">
             @include('dashboard::sections.full.sidebar')
             <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">

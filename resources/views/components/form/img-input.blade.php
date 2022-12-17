@@ -17,23 +17,23 @@
                 </div>
             @endisset
 
-            <!--begin::Label-->
+            
             <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
                 data-kt-image-input-action="change"
                 data-bs-toggle="tooltip"
                 title=""
                 data-bs-original-title="{{ $title }}">
                 <i class="bi bi-pencil-fill fs-7"></i>
-                <!--begin::Inputs-->
+                
                 <input type="file"
                     name="logo[{{ $name }}]"
                     accept=".png, .jpg, .jpeg">
                 <input type="hidden"
                     name="{{ $name }}_remove">
-                <!--end::Inputs-->
+                
             </label>
-            <!--end::Label-->
-            <!--begin::Cancel-->
+            
+            
             <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
                 data-kt-image-input-action="cancel"
                 data-bs-toggle="tooltip"
@@ -41,8 +41,8 @@
                 data-bs-original-title="Cancel avatar">
                 <i class="bi bi-x fs-2"></i>
             </span>
-            <!--end::Cancel-->
-            <!--begin::Remove-->
+            
+            
             <x-dashboard::form :action="route('dashboard.settings.defaultLogo',$name)">
                 <button type="submit"
                     class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
@@ -52,7 +52,7 @@
                     <i class="bi bi-x fs-2"></i>
                 </button>
             </x-dashboard::form>
-            <!--end::Remove-->
+            
         </div>
 
         <div class="form-text">Allowed file types: {{ $allowTypes }}.</div>

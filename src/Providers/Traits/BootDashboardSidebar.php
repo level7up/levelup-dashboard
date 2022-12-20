@@ -48,6 +48,14 @@ trait BootDashboardSidebar
 
     private function getAdminsMenu()
     {
+        if (!dashboard_has('user_roles_enabled')) {
+                return [
+                    'title' => 'Admins',
+                    'order' => 300,
+                    'icon' => 'phosphor-user-circle-gear',
+                    'url' => '/dashboard/admins',
+                ];
+            }
         return [
             'title' => 'Admins',
             'icon' => 'phosphor-user-circle-gear',

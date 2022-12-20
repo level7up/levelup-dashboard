@@ -14,7 +14,7 @@
     <meta property="og:site_name" content="{{ config('app.name') }}" />
     {{-- <link rel="canonical" href="https://preview.keenthemes.com/metronic8" /> --}}
     {{-- <link rel="canonical" href="https://preview.keenthemes.com/metronic8" /> --}}
-    <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/60x60.png') }}" />
+    {{-- <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/60x60.png') }}" /> --}}
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">

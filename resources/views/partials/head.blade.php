@@ -45,6 +45,20 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="{{ asset('dashboard/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet"
         type="text/css" />
+    <style>
+        .neonText {
+            color: #fff;
+            text-shadow:
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff,
+                0 0 42px #0f0,
+                0 0 82px #045,
+                0 0 92px #35a,
+                0 0 102px #56d,
+                0 0 151px #58f;
+        }
+    </style>
     @stack('styles')
 
     @livewireStyles

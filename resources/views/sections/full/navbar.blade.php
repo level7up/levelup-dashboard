@@ -1,7 +1,11 @@
 <div id="kt_header" class="header align-items-stretch">
     <div class="header-brand">
-        <a href="{{ route('dashboard.home') }}">
-            <img alt="Logo" src="{{ setting('logo', 'square_dark') }}" class="h-60px h-lg-60px" />
+        <a href="{{ route('home') }}" class="d-flex align-items-center">
+            <img alt="Logo" src="{{ setting('logo', 'square_dark') }}" class="h-60px h-lg-60px mx-2 rounded-circle">
+
+            <h3 class="neonText">
+                {{ config('app.name') }}</h3>
+
         </a>
         <div id="kt_aside_toggle" class="btn btn-icon w-auto px-0 btn-active-color-primary aside-minimize"
             data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body"
@@ -53,7 +57,7 @@
             class="container-fluid py-6 py-lg-0 d-flex flex-column flex-lg-row align-items-lg-stretch justify-content-lg-between">
             <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
                 class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
-                
+
                 {{-- <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1" style="margin-right: 1.25rem">
                     {{ $title }}
                 </h1>

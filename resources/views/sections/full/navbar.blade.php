@@ -4,7 +4,7 @@
             <img alt="Logo" src="{{ setting('logo', 'square_dark') }}" class="h-60px h-lg-60px mx-2 rounded-circle">
 
             <h3 class="neonText">
-                {{ config('app.name') }}</h3>
+                {{  setting('general', 'site_name', 'My site') }}</h3>
 
         </a>
         <div id="kt_aside_toggle" class="btn btn-icon w-auto px-0 btn-active-color-primary aside-minimize"

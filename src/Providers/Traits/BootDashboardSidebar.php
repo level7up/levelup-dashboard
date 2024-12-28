@@ -40,7 +40,7 @@ trait BootDashboardSidebar
     {
         return [
             'title' => 'Dashboard',
-            'url' => '/dashboard',
+            'url' => '/',
             'icon' => 'phosphor-desktop-duotone',
             'order' => 0,
         ];
@@ -53,7 +53,7 @@ trait BootDashboardSidebar
                     'title' => 'Admins',
                     'order' => 300,
                     'icon' => 'phosphor-user-circle-gear',
-                    'url' => '/dashboard/admins',
+                    'url' => '/admins',
                 ];
             }
         return [
@@ -63,15 +63,15 @@ trait BootDashboardSidebar
             'items' => [
                 [
                     'title' => 'List admins',
-                    'url' => '/dashboard/admins',
+                    'url' => '/admins',
                 ],
                 [
                     'title' => 'Roles',
-                    'url' => '/dashboard/admins/roles',
+                    'url' => '/admins/roles',
                 ],
                 [
                     'title' => 'Permissions',
-                    'url' => '/dashboard/admins/permissions',
+                    'url' => '/admins/permissions',
                 ],
             ]
         ];
@@ -84,7 +84,7 @@ trait BootDashboardSidebar
                 'title' => 'Users',
                 'order' => 200,
                 'icon' => 'phosphor-user-focus',
-                'url' => '/dashboard/users',
+                'url' => '/users',
             ];
         }
 
@@ -92,7 +92,7 @@ trait BootDashboardSidebar
             $items = [
                 [
                     'title' => "Users list",
-                    'url' => '/dashboard/users',
+                    'url' => '/users',
                 ]
             ];
         }
@@ -104,11 +104,11 @@ trait BootDashboardSidebar
             'items' => array_merge($items, [
                 [
                     'title' => 'Roles',
-                    'url' => '/dashboard/users/roles',
+                    'url' => '/users/roles',
                 ],
                 [
                     'title' => 'Permissions',
-                    'url' => '/dashboard/users/permissions',
+                    'url' => '/users/permissions',
                 ],
             ]),
         ];
@@ -124,17 +124,17 @@ trait BootDashboardSidebar
             'title' => 'Promo Codes',
             'icon' => 'phosphor-piano-keys-duotone',
             'order' => 900,
-            'url' => '/dashboard/promo-codes',
+            'url' => '/promo-codes',
         ];
     }
 
     private function getStaticPagesMenu()
     {
-        
+
         return [
             'title' => 'Pages',
             'icon' => 'phosphor-piano-keys-duotone',
-            'url' => '/dashboard/pages',
+            'url' => '/pages',
             'order' => 900,
         ];
     }
@@ -144,7 +144,7 @@ trait BootDashboardSidebar
         return [
             'title' => 'Countries List',
             'icon' => 'phosphor-piano-keys-duotone',
-            'url' => '/dashboard/countries',
+            'url' => '/countries',
             'order' => 1000,
         ];
     }
@@ -158,7 +158,7 @@ trait BootDashboardSidebar
         return [
             'title' => 'Teams',
             'icon' => 'phosphor-piano-keys-duotone',
-            'url' => '/dashboard/teams',
+            'url' => '/teams',
             'order' => 1000,
         ];
     }
@@ -172,15 +172,15 @@ trait BootDashboardSidebar
             'items' => [
                 [
                     'title' => 'General',
-                    'url' => '/dashboard/settings/general/en',
+                    'url' => '/settings/general/en',
                 ],
                 [
                     'title' => 'Logos',
-                    'url' => '/dashboard/settings/logos',
+                    'url' => '/settings/logos',
                 ],
                 [
                     'title' => 'Social',
-                    'url' => '/dashboard/settings/social',
+                    'url' => '/settings/social',
                 ],
             ]
         ];

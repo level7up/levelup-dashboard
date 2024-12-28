@@ -35,7 +35,7 @@ abstract class DataTable extends BaseDataTable
                         $this->getButtons()
                     )
                     ->parameters([
-                        'drawCallback' => 'function() { KTMenu.createInstances(); Livewire.rescan(); }',
+                        'drawCallback' => 'function() { KTMenu.createInstances(); }',
                     ])
                     ->scrollX($this->scrollX);
     }
@@ -68,7 +68,7 @@ abstract class DataTable extends BaseDataTable
         return array_merge(['status_action', 'actions'], $columns);
     }
 
-    protected function filename()
+    protected function filename() : String
     {
         return uniqid(config('app.name')) . date('-d-m-h');
     }

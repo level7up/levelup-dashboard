@@ -20,6 +20,8 @@ class DashboardServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../../config/dashboard.php', 'dashboard');
+        $this->mergeConfigFrom(__DIR__.'/../../config/settings.php', 'settings');
+
         config(['blade-icons.attributes' => ['width' => 16, 'height' => 16,],]);
         $this->registerFacades();
     }

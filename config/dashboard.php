@@ -1,7 +1,14 @@
 <?php
+use Illuminate\Support\Facades\Request;
 
 return [
-
+    'domains' => [
+        'dashboard' => env("DASHBOARD_DOMAIN", null),
+        'api' => env("API_DOMAIN", "api.".Request::getHost()),
+    ],
+    'prefix' => [
+        'dashboard' => !env("DASHBOARD_DOMAIN") ? env("DASHBOARD_PREFIX", '/dashboard') : null,
+    ],
     'logo' => [
         'default' => asset('dashboard/media/logos/logo-012.png'),
         'default-dark' => asset('dashboard/media/logos/180x50-dark.png'),

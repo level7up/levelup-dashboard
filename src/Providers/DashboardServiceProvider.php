@@ -55,14 +55,16 @@ class DashboardServiceProvider extends ServiceProvider
     {
         Route::group([
             'middleware' => ['web'],
-            'prefix' => 'dashboard',
+            'prefix' =>config('dashboard.prefix.dashboard'),
+            'domain' => config('dashboard.domains.dashboard'),
             'as' => 'dashboard.',
         ], function () {
             $this->loadRoutesFrom(__DIR__.'/../../routes/auth.php');
         });
         Route::group([
             'middleware' => ['web', 'auth:admin'],
-            'prefix' => 'dashboard',
+            'prefix' =>config('dashboard.prefix.dashboard'),
+            'domain' => config('dashboard.domains.dashboard'),
             'as' => 'dashboard.',
         ], function () {
             $this->loadRoutesFrom(__DIR__.'/../../routes/dashboard.php');

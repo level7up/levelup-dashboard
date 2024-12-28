@@ -1,6 +1,6 @@
 <div id="kt_header" class="header align-items-stretch">
     <div class="header-brand">
-        <a href="{{ route('home') }}" class="d-flex align-items-center">
+        <a href="{{ route('dashboard.home') }}" class="d-flex align-items-center">
             <img alt="Logo" src="{{ setting('logo', 'square_dark') }}" class="h-60px h-lg-60px mx-2 rounded-circle">
 
             <h3 class="neonText">
@@ -61,7 +61,7 @@
                 {{-- <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1" style="margin-right: 1.25rem">
                     {{ $title }}
                 </h1>
-                
+
 
                 <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                     @foreach (explode('/', request()->route()->uri) as $item)

@@ -50,7 +50,7 @@ if (!function_exists('setting')) {
         if (is_array($settingClass->$name) && isset($settingClass->$name[get_lang()])) {
             return $settingClass->$name[get_lang()];
         }
-        
+
         return $settingClass->$name;
     }
 }
@@ -98,8 +98,8 @@ if (!function_exists('get_setting_group_class')) {
         $group = implode('', array_map(function ($group_piece) {
             return ucfirst($group_piece);
         }, explode('_', $group)));
-        $groupSettings = "${group}Settings";
-        $namespace = preg_grep("~${groupSettings}~", config('settings.settings'));
+        $groupSettings = "{$group}Settings";
+        $namespace = preg_grep("~{$groupSettings}~", config('settings.settings'));
 
         if (count($namespace) > 0) {
             return array_values($namespace)[0];
@@ -195,7 +195,7 @@ if (! function_exists('get_lang')) {
 
 
 if (! function_exists('fractal_response')) {
-    function fractal_response($model, array $includes = [], array $meta = null)
+    function fractal_response($model, array $includes = [], array $meta = [])
     {
         $transformerSuffix = $model;
 
@@ -211,7 +211,7 @@ if (! function_exists('fractal_response')) {
             new $transformer(),
         )->parseIncludes($includes);
 
-        if ($meta) {
+        if (count($meta)) {
             $fractal = $fractal->addMeta(['pagination' => $meta]);
         }
 
@@ -229,7 +229,7 @@ if (! function_exists('api_response')) {
      *
      * @return JsonResponse
      */
-    function api_response(string $message, int $status = 200, array $data = null)
+    function api_response(string $message, int $status = 200, array $data = [])
     {
         return new JsonResponse([
             'message' => $message,

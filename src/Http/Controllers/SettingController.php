@@ -64,26 +64,26 @@ class SettingController extends Controller
             'copyrights' => 'required',
             'locale' => 'required|in:en,ar'
         ]);
+        setting_update('general', 'site_name',$request->site_name);
+        // $general->site_name = $request->site_name;
+        // $general->email = $request->email;
+        // $general->phone = $request->phone;
+        // $general->mainColor = $request->mainColor;
 
-        $general->site_name = $request->site_name;
-        $general->email = $request->email;
-        $general->phone = $request->phone;
-        $general->mainColor = $request->mainColor;
+        // $general->site_description = array_merge($general->site_description, [
+        //     $request->locale =>  $request->site_description,
+        // ]);
+        // $general->slogan = array_merge($general->slogan, [
+        //     $request->locale =>  $request->slogan,
+        // ]);
+        // $general->address = array_merge($general->address, [
+        //     $request->locale =>  $request->address,
+        // ]);
+        // $general->copyrights = array_merge($general->copyrights, [
+        //     $request->locale =>  $request->copyrights,
+        // ]);
 
-        $general->site_description = array_merge($general->site_description, [
-            $request->locale =>  $request->site_description,
-        ]);
-        $general->slogan = array_merge($general->slogan, [
-            $request->locale =>  $request->slogan,
-        ]);
-        $general->address = array_merge($general->address, [
-            $request->locale =>  $request->address,
-        ]);
-        $general->copyrights = array_merge($general->copyrights, [
-            $request->locale =>  $request->copyrights,
-        ]);
-
-        $general->save();
+        // $general->save();
         return $this->successRedirect('dashboard.settings.updateGeneral', trans("dashboard::messages.setting.updateGeneral"), ['locale'=>$request->locale]);
     }
 

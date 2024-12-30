@@ -30,20 +30,22 @@ Route::put('profile', [AdminProfileController::class , 'index'])->name('profile.
 
 // SETTINGS ----------------------------
 Route::group(['prefix' => 'settings'], function () {
-    Route::get('logos', [SettingController::class, 'index'])->name('settings.updateLogos');
-    Route::post('logos', [SettingController::class, 'updateLogos']);
+//     Route::get('logos', [SettingController::class, 'index'])->name('settings.updateLogos');
+//     Route::post('logos', [SettingController::class, 'updateLogos']);
     Route::get('/languages', [SettingController::class, 'lang'])->name('language');
 
-    Route::post('setDefaultlogo/{key}', [SettingController::class, 'setDefaultLogo'])->name('settings.defaultLogo');
+//     Route::post('setDefaultlogo/{key}', [SettingController::class, 'setDefaultLogo'])->name('settings.defaultLogo');
 
-    Route::get('general/{locale?}', [SettingController::class, 'general'])->name('settings.updateGeneral');
-    Route::post('general', [SettingController::class, 'updateGeneral']);
+//     Route::get('general/{locale?}', [SettingController::class, 'general'])->name('settings.updateGeneral');
+//     Route::post('general', [SettingController::class, 'updateGeneral']);
 
-    Route::get('social', [SettingController::class, 'social'])->name('settings.updateSocial');
-    Route::post('social', [SettingController::class, 'updateSocial']);
+//     Route::get('social', [SettingController::class, 'social'])->name('settings.updateSocial');
+//     Route::post('social', [SettingController::class, 'updateSocial']);
 
-    Route::get('mobile', [SettingController::class, 'mobile'])->name('settings.updateMobile');
-    Route::post('mobile', [SettingController::class, 'updateMobile']);
+//     Route::get('mobile', [SettingController::class, 'mobile'])->name('settings.updateMobile');
+//     Route::post('mobile', [SettingController::class, 'updateMobile']);
 });
+Route::get('palette/{menu}/{palette}/{lang?}' , [get_dashboard_controller('Palette'), 'show'])->name('palette.show');
+Route::post('palette/{menu}/{palette}/{lang?}' , [get_dashboard_controller('Palette'), 'store'])->name('palette.store');
 
 Route::get('chat/{id}', [ChatController::class , 'get_chat'])->name('chat');

@@ -110,6 +110,7 @@
                                         <x-slot name="button">
                                             <div class="d-flex btn btn-light btn-active-light-primary btn-sm">
                                                 Action
+                                                @svg('ss')
                                                 {{-- <x-duotune-arrows-072 class="d-flex" /> --}}
                                             </div>
                                         </x-slot>

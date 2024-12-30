@@ -1,16 +1,23 @@
 <?php
 
-use Spatie\LaravelSettings\Migrations\SettingsMigration;
+use App\UI\Palettes\Images;
+use Level7up\Dashboard\Palette\Migrations\Migration;
 
-class CreateLogoSettings extends SettingsMigration
+
+class CreateLogoSettings extends Migration
 {
-    public function up(): void
+    protected $ignoreDuplications = true;
+    protected $palette = Images::class;
+
+    public function groups(): void
     {
-        $this->migrator->add('logo.default', '/assets/dashboard/media/logos/180x50.png');
-        $this->migrator->add('logo.default_dark', '/assets/dashboard/media/logos/180x50-dark.png');
-        $this->migrator->add('logo.favicon', '/assets/dashboard/media/logos/60x60.png');
-        $this->migrator->add('logo.favicon_dark', '/assets/dashboard/media/logos/60x60-dark.png');
-        $this->migrator->add('logo.square', '/assets/dashboard/media/logos/256x256.png');
-        $this->migrator->add('logo.square_dark', '/assets/dashboard/media/logos/256x256-dark.png');
+        $this->group('logo', function ($group) {
+            return $group->image('default', '/assets/dashboard/media/logos/180x50.svg')
+                ->image('default_dark', '/assets/dashboard/media/logos/180x50-dark.svg')
+                ->image('favicon', '/assets/dashboard/media/logos/60x60.svg')
+                ->image('favicon_dark', '/assets/dashboard/media/logos/60x60-dark.svg')
+                ->image('square', '/assets/dashboard/media/logos/256x256.svg')
+                ->image('square_dark', '/assets/dashboard/media/logos/256x256-dark.svg');
+        });
     }
 }

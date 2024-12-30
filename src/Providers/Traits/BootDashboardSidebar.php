@@ -2,8 +2,10 @@
 
 namespace Level7up\Dashboard\Providers\Traits;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Spatie\Permission\Models\Role;
+use Level7up\Dashboard\Facades\Palette;
 
 trait BootDashboardSidebar
 {
@@ -30,6 +32,7 @@ trait BootDashboardSidebar
                 array_push($nav, $item);
             }
         }
+
 
         config([
             'dashboard.sidebar' => $nav
@@ -165,24 +168,33 @@ trait BootDashboardSidebar
 
     private function getSettingsMenu()
     {
+        $menu = array_unique(Arr::pluck(Palette::list(), 'menu', 'name'));
+        $items = [];
+        foreach ($menu as $name => $item) {
+            $items[] = [
+                'title' => trans('dashboard::site.'.($item ?? $name)),
+                'url' => dashboard_path("palette/{$item}/".($name ?? $item)),
+            ];
+        }
         return [
             'title' => 'Settings',
             'icon' => 'phosphor-gear-six-duotone',
             'order' => 1100,
-            'items' => [
-                [
-                    'title' => 'General',
-                    'url' => '/settings/general/en',
-                ],
-                [
-                    'title' => 'Logos',
-                    'url' => '/settings/logos',
-                ],
-                [
-                    'title' => 'Social',
-                    'url' => '/settings/social',
-                ],
-            ]
+            'items'=> $items
+            // 'items' => [
+            //     [
+            //         'title' => 'General',
+            //         'url' => '/settings/general/en',
+            //     ],
+            //     [
+            //         'title' => 'Logos',
+            //         'url' => '/settings/logos',
+            //     ],
+            //     [
+            //         'title' => 'Social',
+            //         'url' => '/settings/social',
+            //     ],
+            // ]
         ];
     }
 

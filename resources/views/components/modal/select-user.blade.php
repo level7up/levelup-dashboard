@@ -10,7 +10,8 @@
         <div class="modal-content">
             <div class="modal-header pb-0 border-0 justify-content-end">
                 <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-                    <x-duotune-arrows.arr061 width="24" height="24"/>
+                    @svg('ss')
+                    {{-- <x-duotune-arrows.arr061 width="24" height="24"/> --}}
                 </div>
             </div>
 

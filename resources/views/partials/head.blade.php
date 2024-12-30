@@ -12,9 +12,8 @@
 
     {{-- <meta property="og:url" content="https://keenthemes.com/metronic" /> --}}
     <meta property="og:site_name" content="{{ config('app.name') }}" />
-    {{-- <link rel="canonical" href="https://preview.keenthemes.com/metronic8" /> --}}
-    {{-- <link rel="canonical" href="https://preview.keenthemes.com/metronic8" /> --}}
-    {{-- <link rel="shortcut icon" href="{{ asset('dashboard/images/logo/60x60.png') }}" /> --}}
+
+    <link rel="shortcut icon" href="{{ asset(setting('logo', 'favicon')) }}" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
@@ -57,6 +56,9 @@
                 0 0 92px #35a,
                 0 0 102px #56d,
                 0 0 151px #58f;
+        }
+        .form-control.form-control-solid{
+            background-color: #c5c5c5;
         }
     </style>
     @stack('styles')

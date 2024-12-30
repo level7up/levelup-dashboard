@@ -2,7 +2,8 @@
     <div class="w-100 position-relative mb-5">
         <span class="svg-icon svg-icon-2 svg-icon-lg-1 svg-icon-gray-500 position-absolute ms-5"
             style="margin-top: 10px;">
-            <x-duotune-general-021 />
+            @svg('ss')
+            {{-- <x-duotune-general-021 /> --}}
         </span>
 
         <input type="text" class="form-control form-control-lg form-control-solid px-15" wire:model="search"

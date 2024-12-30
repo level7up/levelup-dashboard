@@ -30,17 +30,24 @@ final class SideMenuUtil
      * @param array $item
      * @return self
      */
-    public function push(array $item): self
+    public function push(array $item = null): self
     {
+        $item = $item ?? $this->item;
         if ($this->parent_group) {
             return $this->appendTo();
         }
 
         $key = Str::slug($item['title']);
 
+        if (! is_null(config("dashboard.sidebar.{$key}")) && !is_null($this->parent_group)) {
+            return $this;
+        }
+
         $item['order'] ??= self::getMaxOrder();
 
-        config(["dashboard.sidebar.${key}" => $item]);
+        config([
+            "dashboard.sidebar.{$key}" => array_merge(config("dashboard.sidebar.{$key}", []), $item)
+        ]);
 
         return $this;
     }
@@ -54,7 +61,7 @@ final class SideMenuUtil
     {
         $key = $this->parent_group ?? $this->getKey($title);
 
-        config(["dashboard.sidebar.${key}.items.".Str::slug($this->item['title']) => $this->item]);
+        config(["dashboard.sidebar.{$key}.items.".Str::slug($this->item['title']) => $this->item]);
 
         $this->item = [];
         $this->parent_group = null;
@@ -90,14 +97,19 @@ final class SideMenuUtil
      * Add child item to parent
      *
      * @param string $title
-     * @param string $url
+     * @param string|array<string, string> $url
      * @param array $permissions
      * @return self
      */
-    public function item(string $title, string $url, $permissions = []): self
+    public function item(string $title, $url, $permissions = []): self
     {
+        $attributes = [];
+        if (is_array($url)) {
+            $attributes = $url;
+            $url = $url['href'];
+        }
         return $this->title($title)
-            ->url($url)
+            ->url($url, $attributes)
             ->permissions($permissions)
             ->appendTo();
     }
@@ -116,7 +128,7 @@ final class SideMenuUtil
 
     public function icon(string $icon): self
     {
-        $this->item['icon'] = $icon;
+        $this->item['icon'] = "duotune-{$icon}";
 
         return $this;
     }
@@ -130,7 +142,6 @@ final class SideMenuUtil
      */
     public function url(string $url, array $attributes = []): self
     {
-        // $this->item['url'] = $url;
         $this->item['url'] = $attributes + [
             'href' => $url,
         ];
@@ -149,19 +160,6 @@ final class SideMenuUtil
     public function route(string $route_name, $options = [], $attributes = []): self
     {
         return $this->url(route($route_name, $options), $attributes);
-    }
-
-    /**
-     * Set item type
-     *
-     * @param string $type
-     * @return self
-     */
-    public function type(string $type): self
-    {
-        $this->item['type'] = $type;
-
-        return $this;
     }
 
     /**
@@ -203,7 +201,7 @@ final class SideMenuUtil
     public function before(string $title): self
     {
         return $this->order(
-            config('dashboard.sidebar.'.Str::slug($title).'.order', self::getMaxOrder()) - 1
+            config("dashboard.sidebar.{$this->getKey($title)}.order", self::getMaxOrder()) - 1
         );
     }
 
@@ -216,7 +214,7 @@ final class SideMenuUtil
     public function after(string $title): self
     {
         return $this->order(
-            config('dashboard.sidebar.'.Str::slug($title).'.order', self::getMaxOrder()) + 1
+            config("dashboard.sidebar.{$this->getKey($title)}.order", self::getMaxOrder()) + 1
         );
     }
 
@@ -226,9 +224,11 @@ final class SideMenuUtil
      * @param string $title
      * @return string|int
      */
-    public function getKey(string $title)
+    public function getKey(string $title = null)
     {
-        return array_search($title, Arr::pluck(config('dashboard.sidebar'), 'title'));
+        return ! is_null(config('dashboard.sidebar.'.Str::slug($title)))
+            ? Str::slug($title)
+            : array_search($title, Arr::pluck(config('dashboard.sidebar', []), 'title'));
     }
 
     /**
@@ -238,7 +238,7 @@ final class SideMenuUtil
      */
     public static function getMaxOrder()
     {
-        $orders = array_column(config('dashboard.sidebar'), 'order');
+        $orders = array_column(config('dashboard.sidebar', []), 'order');
 
         return count($orders) > 0 ? max($orders) : 9999;
     }

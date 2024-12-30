@@ -6,8 +6,13 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Route;
+use Level7up\Dashboard\Palette\Palette;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Level7up\Dashboard\Exceptions\ClassDoseNotExist;
+use Level7up\Dashboard\Exceptions\PaletteGroupNotFound;;
+use Level7up\Dashboard\Facades\Palette as PaletteFacade;
+use Illuminate\Contracts\Container\BindingResolutionException;
 
 if (! function_exists('is_menu_active')) {
     /**
@@ -32,7 +37,20 @@ if (! function_exists('is_menu_active')) {
     }
 }
 
-if (!function_exists('setting')) {
+if (! function_exists('palette') ) {
+    /**
+     * Return palette instance
+     *
+     * @param string $key
+     * @return Palette
+     */
+    function palette(string $key): Palette {
+        return PaletteFacade::make($key)
+            ->instance();
+    }
+}
+
+if (! function_exists('setting')) {
     /**
      * Get setting from setting group class
      *
@@ -42,16 +60,15 @@ if (!function_exists('setting')) {
      */
     function setting(string $group, string $name, $fallback_value = null)
     {
-        $settingClass = app(get_setting_group_class($group));
-        if (!isset($settingClass->$name)) {
+        try {
+            $value = palette($group)->find($name)?->getValue();
+
+            return $value ? $value : $fallback_value;
+        } catch (PaletteGroupNotFound $x) {
+            return $fallback_value;
+        } catch (BindingResolutionException $x) {
             return $fallback_value;
         }
-
-        if (is_array($settingClass->$name) && isset($settingClass->$name[get_lang()])) {
-            return $settingClass->$name[get_lang()];
-        }
-
-        return $settingClass->$name;
     }
 }
 
@@ -67,7 +84,6 @@ if (!function_exists('setting_update')) {
     function setting_update(string $group, $name, $new_value = null)
     {
         $settingClass = app(get_setting_group_class($group));
-
         if (is_array($name)) {
             foreach ($name as $key => $value) {
                 $settingClass->$key = $value;
@@ -100,7 +116,7 @@ if (!function_exists('get_setting_group_class')) {
         }, explode('_', $group)));
         $groupSettings = "{$group}Settings";
         $namespace = preg_grep("~{$groupSettings}~", config('settings.settings'));
-
+        // dd($namespace);
         if (count($namespace) > 0) {
             return array_values($namespace)[0];
         }
@@ -274,5 +290,83 @@ if(! function_exists('rand_abstract')){
             return asset('dashboard/media/svg/shapes/abstract-'.rand(1,5).'.svg');
         }
         return asset('dashboard/media/svg/shapes/abstract-'.rand(1,5).'-dark.svg');
+    }
+}
+
+if (! function_exists('get_model')) {
+    /**
+     * Get first model from classes stack
+     *
+     * @param string $key
+     * @return string
+     */
+    function get_model(string $name)
+    {
+        return get_first_class('Models', $name);
+    }
+    if (! function_exists('get_first_class')) {
+        /**
+         * Get first important class.
+         *
+         * @param string $namespace
+         * @param string $name
+         *
+         * @return string
+         */
+        function get_first_class(string $namespace, string $name): string
+        {
+            $arr = [
+                "App\\{$namespace}\\{$name}" => class_exists("App\\{$namespace}\\{$name}"),
+                "App\\{$namespace}\\Central\\{$name}" => class_exists("App\\{$namespace}\\Central\\{$name}"),
+                "Level7up\Dashboard\\{$namespace}\\{$name}" => class_exists("Level7up\Dashboard\\{$namespace}\\{$name}"),
+            ];
+
+            $class = array_search(true, $arr);
+
+            throw_unless($class, ClassDoseNotExist::class, $arr);
+
+            return $class;
+        }
+    }
+}
+if (! function_exists('dashboard_path')) {
+    /**
+     * Get dashboard path
+     *
+     * @param string $path
+     * @return string
+     */
+    function dashboard_path(string $path = null)
+    {
+        return sprintf('%s/%s', config('dashboard.prefix.dashboard'), $path);
+    }
+}
+
+if (! function_exists('push_script')) {
+    /**
+     * Push to metronic script
+     *
+     * @param string $key
+     * @return void
+     */
+    function push_script(string $script)
+    {
+        $scripts = config('metronic.scripts', []);
+
+        $scripts[$script] = $script;
+
+        config(['metronic.scripts' => $scripts]);
+    }
+}
+if (! function_exists('global_asset')) {
+    /**
+     * Global asset helper. Needed in saas projects
+     *
+     * @param string $asset
+     * @return string
+     */
+    function global_asset(string $asset)
+    {
+        return env('ASSET_URL')."/{$asset}";
     }
 }

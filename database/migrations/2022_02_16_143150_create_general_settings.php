@@ -1,30 +1,34 @@
 <?php
 
-use Spatie\LaravelSettings\Migrations\SettingsMigration;
+use App\UI\Palettes\General;
+use Level7up\Dashboard\Palette\Migrations\Migration;
 
-class CreateGeneralSettings extends SettingsMigration
+
+class CreateGeneralSettings extends Migration
 {
-    public function up(): void
+    protected $palette = General::class;
+
+    protected $ignoreDuplications = true;
+
+    public function groups(): void
     {
-        $this->migrator->add('general.site_name','Level7up');
-        $this->migrator->add('general.email','Level7up@gmail.com');
-        $this->migrator->add('general.phone','+201000000010');
-        $this->migrator->add('general.mainColor','#35a180');
-        $this->migrator->add('general.site_description',[
-            'en'=>'Enjoy a smoother and easier experience on your phone, download the app now',
-            'ar' =>'وصف الموقع  بالعربي'
-        ]);
-        $this->migrator->add('general.address',[
-            'en'=>'Berket Elsab3',
-            'ar' =>'بركة السبع'
-        ]);
-        $this->migrator->add('general.slogan',[
-            'en'=>'That’s it! Now it’s time to select the perfect slogan for your latest endeavor t',
-            'ar' =>'السلوجن بالعربي'
-        ]);
-        $this->migrator->add('general.copyrights',[
-            'en'=>'Tabani copyrights',
-            'ar' =>'تبني'
-        ]);
+        $this->group('general', function ($group) {
+            return $group->text('site_name', 'Hash studio')
+                ->text('email', 'info@hashstudio.dev')
+                ->text('phone', '+201012895020')
+                ->text('site_description', [
+                    'en'=>'Enjoy a smoother and easier experience on your phone, download the app now',
+                    'ar' =>'وصف الموقع بس بالعربي',
+                ])
+                ->repeater('address')
+                ->text('slogan', [
+                    'en'=>'That’s it! Now it’s time to select the perfect slogan for your latest endeavor t',
+                    'ar' =>'شعار الموقع',
+                ])
+                ->text('copyrights', [
+                    'en'=>'©️ 2022 copyrights',
+                    'ar' =>'جميع الحقوق محفوظة ©️ 2022',
+                ]);
+        });
     }
 }

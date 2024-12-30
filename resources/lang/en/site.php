@@ -3,6 +3,7 @@
 use Level7up\Dashboard\Http\Controllers\FaqController;
 
 return [
+    'general' => 'General',
     "update" => 'تم التحديث بنجاح',
     FaqController::class => [
         'destroy' => ""

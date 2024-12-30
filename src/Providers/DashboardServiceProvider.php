@@ -2,12 +2,17 @@
 
 namespace Level7up\Dashboard\Providers;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
+use Level7up\Dashboard\Util\CacheUtil;
 use Illuminate\Support\ServiceProvider;
-
+use Level7up\Dashboard\Facades\Palette;
+use Level7up\Dashboard\Facades\SideMenu;
+use Level7up\Dashboard\Palette\Generator;
 use Level7up\Dashboard\Util\SideMenuUtil;
 use Level7up\Dashboard\Console\CreateAdmin;
+use Level7up\Dashboard\Facades\Cache as CacheFacade;
 use Level7up\Dashboard\Providers\Traits\BootSettingsConfig;
 use Level7up\Dashboard\Providers\Traits\BootDashboardSidebar;
 use Level7up\Dashboard\Providers\Traits\BootLivewireComponents;
@@ -23,6 +28,17 @@ class DashboardServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../../config/settings.php', 'settings');
 
         config(['blade-icons.attributes' => ['width' => 16, 'height' => 16,],]);
+        Arr::macro('sum', function ($items, $value) {
+            return array_sum(Arr::pluck($items, $value));
+        });
+
+        Arr::macro('toAttributes', function($array) {
+            return implode(' ', array_map(
+                fn ($k, $v) => $k . "=" . htmlspecialchars($v),
+                array_keys($array),
+                $array
+            ));
+        });
         $this->registerFacades();
     }
 
@@ -43,6 +59,9 @@ class DashboardServiceProvider extends ServiceProvider
             $this->bootDashboardSidebar();
             $this->bootLivewireComponents();
         }
+        Blade::directive('requirePlugin', function ($name) {
+            return '<?php push_script(global_asset("/dashboard/plugins/custom/'.$name.'/'.$name.'.bundle.js")); ?>';
+        });
     }
     protected function configurePublishing()
     {
@@ -87,6 +106,12 @@ class DashboardServiceProvider extends ServiceProvider
     {
         $this->app->singleton('dashboard-side-menu', function () {
             return new SideMenuUtil();
+        });
+        $this->app->singleton(CacheFacade::class, function () {
+            return new CacheUtil;
+        });
+        $this->app->singleton(Palette::class, function () {
+            return new Generator;
         });
     }
 }

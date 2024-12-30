@@ -1,3 +1,6 @@
+@foreach (config('dashboard.scripts', []) as $script)
+    <script src="{{ $script }}"></script>
+@endforeach
 <script src="{{ asset('dashboard/plugins/global/plugins.bundle.js') }}"></script>
 <script src="{{ asset('dashboard/plugins/custom/fslightbox/fslightbox.bundle.js') }}"></script>
 <script src="{{ asset('dashboard/js/scripts.bundle.js') }}"></script>

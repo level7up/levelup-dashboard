@@ -14,7 +14,7 @@
         <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
             data-kt-image-input-action="change" data-bs-toggle="tooltip" title=""
             data-bs-original-title="{{ $title }}">
-            <i class="bi bi-pencil-fill fs-7"></i>
+            @svg('ss')
 
             <input type="file" name="{{ $name }}" accept=".png, .jpg, .jpeg, .svg">
             <input type="hidden" name="{{ $name }}_remove">
@@ -23,7 +23,7 @@
 
         <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
             data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="" data-bs-original-title="Cancel Image">
-            <i class="bi bi-x fs-2"></i>
+            @svg('ss')
         </span>
     </div>
     @error($name)

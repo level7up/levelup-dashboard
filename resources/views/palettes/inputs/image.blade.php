@@ -1,6 +1,5 @@
 <x-dashboard::form.image :name="$name"
     :id="$attributes['id'] ?? null"
-    :value="is_string($value) ? $value : null"
-    inline>
+    :value="is_string($value) ? $value : null">
     {{ $label }}
-</x-metronic::form.image>
+</x-dashboard::form.image>

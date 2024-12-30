@@ -60,6 +60,9 @@
         .form-control.form-control-solid{
             background-color: #c5c5c5;
         }
+        .image-input.image-input-outline .image-input-wrapper {
+            border: 3px solid #d3d3d3;
+        }
     </style>
     @stack('styles')
 

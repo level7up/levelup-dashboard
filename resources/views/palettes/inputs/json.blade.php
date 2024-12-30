@@ -10,5 +10,5 @@
                     inset />
             </div>
         @endforeach
-    </x-metronic::flex>
-</x-metronic::form-group>
+    </x-dashboard::flex>
+</x-dashboard::form-group>

@@ -31,13 +31,13 @@ class PaletteController extends Controller
     public function store(Request $request, string $menu, string $palette, string $lang = null)
     {
         // $this->authorize('update', Setting::class);
-
+        dd($request->all());
         Palette::make($palette)
             ->language($lang)
             ->update($request->all());
 
         return redirect()
-            ->route('dashboard.ui.palette.show', [$menu, $palette, $lang])
+            ->route('dashboard.palette.show', [$menu, $palette, $lang])
             ->with('success', trans('metronic::messages.updated', ['model' => trans('Setting')]));
     }
 }

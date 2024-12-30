@@ -7,4 +7,4 @@
             {!! $input->inline(false)->attributes(['form-group-class' => 'w-100'])->render($group) !!}
         @endforeach
     </div>
-</x-metronic::form-group>
+</x-dashboard::form-group>

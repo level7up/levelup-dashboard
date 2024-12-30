@@ -24,13 +24,13 @@
                                 @svg('ss')
                                 {{-- <x-duotune-general-027 /> --}}
                             </span>
-                            @lang('metronic::actions.delete')
+                            @lang('dashboard::actions.delete')
                         </a>
-                    </x-metronic::flex>
+                    </x-dashboard::flex>
                 </div>
             @endforeach
         </div>
-    </x-metronic::form-group>
+    </x-dashboard::form-group>
 
     <div class="form-group mt-5">
         <a href="javascript:;"
@@ -40,7 +40,7 @@
                 @svg('ss')
                 {{-- <x-duotune-arrows-075 /> --}}
             </span>
-            @lang('metronic::actions.create')
+            @lang('dashboard::actions.create')
         </a>
     </div>
 </div>

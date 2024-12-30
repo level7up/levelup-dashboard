@@ -4,4 +4,4 @@
     :value="old($name, is_array($value) ? ($value[$group->parent_group ? $group->parent_group->palette->language : $group->palette->language] ?? null) : $value)"
     :inline="$inline">
     {{ $label }}
-</x-metronic::form.input>
+</x-dashboard::form.input>

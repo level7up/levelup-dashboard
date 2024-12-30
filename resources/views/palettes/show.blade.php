@@ -20,13 +20,13 @@
                     data-kt-sticky-zindex="95">
                     <x-dashboard::card flush>
                         <h6 class="bold">
-                            @lang('ui::keywords.settings')
+                            @lang('dashboard::keywords.settings')
                         </h6>
                         {{-- <x-dashboard::divider /> --}}
 
                         <x-dashboard::form.submit id="palette-save-btn"
                             class="w-100 mb-10">
-                            @lang('metronic::actions.save')
+                            @lang('dashboard::keywords.save')
                         </x-dashboard::form.submit>
 
                         <div
@@ -56,7 +56,6 @@
 
                         <div id="groupCollapsingHandlerContainer"
                             class="menu menu-column menu-rounded menu-state-bg menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary">
-
                             @foreach ($palette->groups as $group)
                                 <div class="menu-item mb-3">
                                     <a href="javascript:;"

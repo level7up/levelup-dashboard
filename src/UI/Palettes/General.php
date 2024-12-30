@@ -45,28 +45,4 @@ class General extends Palette
                 ->translated(),
         ])->label(trans("dashboard::palettes.general.general.title"));
     }
-
-    public function social(): Group
-    {
-        return Group::make([
-            Text::make('facebook')
-                ->label(trans('dashboard::palettes.general.social.inputs.facebook'))
-                ->rules('sometimes|string|nullable'),
-            Text::make('twitter')
-                ->label(trans('dashboard::palettes.general.social.inputs.twitter'))
-                ->rules('sometimes|string|nullable'),
-            Text::make('linkedin')
-                ->label(trans('dashboard::palettes.general.social.inputs.linkedin'))
-                ->rules('sometimes|string|nullable'),
-            Text::make('instagram')
-                ->label(trans('dashboard::palettes.general.social.inputs.instagram'))
-                ->rules('sometimes|string|nullable'),
-            Text::make('snapchat')
-                ->label(trans('dashboard::palettes.general.social.inputs.snapchat'))
-                ->rules('sometimes|string|nullable'),
-            Text::make('tiktok')
-                ->label(trans('dashboard::palettes.general.social.inputs.tiktok'))
-                ->rules('sometimes|string|nullable'),
-        ])->label(trans("dashboard::palettes.general.social.title"));
-    }
 }

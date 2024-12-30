@@ -124,7 +124,6 @@ class Group
     public function render(Group $group = null): string
     {
         $this->parent_group = $this != $group ? $group : null;
-
         return view("dashboard::palettes.groups.{$this->template}", $this->all())
             ->render();
     }

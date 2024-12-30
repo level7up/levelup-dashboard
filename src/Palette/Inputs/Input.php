@@ -113,7 +113,6 @@ abstract class Input
         $this->setGroup($group);
 
         $this->name = "{$this->group->name}[{$this->name}]";
-
         return $this->html();
     }
 

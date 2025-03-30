@@ -49,7 +49,6 @@ abstract class Palette
     public function find(string $key)
     {
         $exploded = explode('.', $key);
-
         if (! $group = Arr::first($this->getGroups(), fn ($g) => $g->name == $exploded[0])) {
             throw new PaletteGroupNotFound();
         }
@@ -57,7 +56,7 @@ abstract class Palette
         if (count($exploded) < 2) {
             return $group;
         }
-
+        // dd( $group->find(str_replace("{$exploded[0]}.", '', $key)));
         return $group->find(str_replace("{$exploded[0]}.", '', $key));
     }
 

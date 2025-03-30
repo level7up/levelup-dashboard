@@ -31,7 +31,7 @@ class PaletteController extends Controller
     public function store(Request $request, string $menu, string $palette, string $lang = null)
     {
         // $this->authorize('update', Setting::class);
-        dd($request->all());
+        // dd($request->all());
         Palette::make($palette)
             ->language($lang)
             ->update($request->all());

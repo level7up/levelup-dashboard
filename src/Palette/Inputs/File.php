@@ -2,10 +2,10 @@
 
 namespace Level7up\Dashboard\Palette\Inputs;
 
-use Level7up\Dashboard\Models\Setting;
-use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Http\UploadedFile;
+use Level7up\Dashboard\Models\Setting;
+use Illuminate\Support\Facades\Storage;
 
 class File extends Input
 {
@@ -17,7 +17,6 @@ class File extends Input
     public function getValue()
     {
         $data = parent::getValue();
-
         if (is_null($data)) {
             return null;
         }

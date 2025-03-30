@@ -13,7 +13,7 @@
     {{-- <meta property="og:url" content="https://keenthemes.com/metronic" /> --}}
     <meta property="og:site_name" content="{{ config('app.name') }}" />
 
-    <link rel="shortcut icon" href="{{ asset(setting('logo', 'favicon')) }}" />
+    <link rel="shortcut icon" href="{{ asset(setting('images', 'logo.favicon')) }}" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">

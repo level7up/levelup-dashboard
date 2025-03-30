@@ -4,9 +4,9 @@ namespace Level7up\Dashboard\Palette\Concerns;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use Level7up\Dashboard\Palette\Group;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
+use Level7up\Dashboard\Palette\Group;
 use Illuminate\Support\Facades\Storage;
 use Level7up\Dashboard\Exceptions\PalettePropertyDoesNotExist;
 

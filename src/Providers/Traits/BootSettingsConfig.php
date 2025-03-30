@@ -7,7 +7,7 @@ trait BootSettingsConfig
     public function bootSettingsConfig()
     {
         config([
-            'app.name' => setting('general', 'site_name', config('app.name')),
+            'app.name' => setting('general', 'general.site_name', config('app.name')),
         ]);
     }
 }

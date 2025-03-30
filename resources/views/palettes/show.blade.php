@@ -50,12 +50,13 @@
                     <x-dashboard::card class="mt-5"
                         flush>
                         <h6 class="bold">
-                            @lang('ui::keywords.setting_groups')
+                            @lang('dashboard::keywords.setting_groups')
                         </h6>
                         {{-- <x-dashboard::divider /> --}}
 
                         <div id="groupCollapsingHandlerContainer"
                             class="menu menu-column menu-rounded menu-state-bg menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary">
+
                             @foreach ($palette->groups as $group)
                                 <div class="menu-item mb-3">
                                     <a href="javascript:;"
@@ -64,8 +65,8 @@
                                         <span class="menu-icon">
                                             <span @class(['svg-icon svg-icon-2 me-3'])
                                                 @unless($loop->first) style="display:none;" @endunless>
-                                                @svg('ss')
-                                                {{-- <x-duotune-arrows-074 /> --}}
+                                                <x-phosphor-arrow-down-bold />
+
                                             </span>
                                         </span>
                                         <span class="palette-menu-title menu-title fw-bold">{{ $group->label }}</span>

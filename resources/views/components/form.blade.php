@@ -1,14 +1,14 @@
 @props([
     'method' => 'POST',
     'action' => '#',
-    'enctype' => '',
+    'confirmed' => null,
 ])
 
 <form method="post"
     action="{{ $action }}"
-    {{ $attributes->merge([
-        'class' => 'm-0',
-    ]) }} enctype ="{{ $enctype }}">
+    {{ $attributes->except('class') }}
+    @class(['m-0', 'form-confirmed' => !is_null($confirmed)])
+    enctype="multipart/form-data">
 
     @method($method)
     @csrf

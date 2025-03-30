@@ -3,9 +3,12 @@
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Storage;
 use Level7up\Dashboard\Palette\Palette;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -13,6 +16,25 @@ use Level7up\Dashboard\Exceptions\ClassDoseNotExist;
 use Level7up\Dashboard\Exceptions\PaletteGroupNotFound;;
 use Level7up\Dashboard\Facades\Palette as PaletteFacade;
 use Illuminate\Contracts\Container\BindingResolutionException;
+if (! function_exists('upload')) {
+    /**
+     * Upload a file to public storage.
+     *
+     * @param UploadedFile $file
+     * @param string|null $folder
+     * @param string|null $sub_folder
+     * @return string
+     */
+    function upload(UploadedFile $file, string $folder = null, string $sub_folder = null): string
+    {
+        $folder = config("support.filesystem.{$folder}") ?? $folder;
+
+        return Storage::disk('public')->putFile(
+            rtrim(implode('/', [$folder, $sub_folder]), '/'),
+            $file
+        );
+    }
+}
 
 if (! function_exists('is_menu_active')) {
     /**
@@ -62,7 +84,6 @@ if (! function_exists('setting')) {
     {
         try {
             $value = palette($group)->find($name)?->getValue();
-
             return $value ? $value : $fallback_value;
         } catch (PaletteGroupNotFound $x) {
             return $fallback_value;
@@ -290,6 +311,21 @@ if(! function_exists('rand_abstract')){
             return asset('dashboard/media/svg/shapes/abstract-'.rand(1,5).'.svg');
         }
         return asset('dashboard/media/svg/shapes/abstract-'.rand(1,5).'-dark.svg');
+    }
+}
+if (! function_exists('is_dark')) {
+    /**
+     * Return if dark mode enabled
+     *
+     * @return mixed
+     */
+    function is_dark(...$args)
+    {
+        if (count($args) > 0) {
+            return Cookie::get('dark_mode') ? $args[0] : ($args[1] ?? null);
+        }
+
+        return Cookie::get('dark_mode');
     }
 }
 

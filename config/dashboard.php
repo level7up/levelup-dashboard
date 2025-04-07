@@ -8,6 +8,7 @@ return [
     ],
     'prefix' => [
         'dashboard' => !env("DASHBOARD_DOMAIN") ? env("DASHBOARD_PREFIX", '/dashboard') : null,
+        'api' => env("API_PREFIX", '/api'),
     ],
     'logo' => [
         'default' => asset('dashboard/media/logos/logo-012.png'),

@@ -2,17 +2,17 @@
 
 namespace Level7up\Dashboard\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
-use Level7up\Dashboard\Models\Behaviors\Destroyable;
-use Level7up\Dashboard\Models\Behaviors\Editable;
-use Level7up\Dashboard\Models\Behaviors\HasDashboardAccess;
-use Level7up\Dashboard\Models\Behaviors\Viewable;
+use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Level7up\Dashboard\Models\Behaviors\Editable;
+use Level7up\Dashboard\Models\Behaviors\Viewable;
+use Level7up\Dashboard\Models\Behaviors\Destroyable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Level7up\Dashboard\Models\Behaviors\HasDashboardAccess;
 
 class User extends Authenticatable
 {

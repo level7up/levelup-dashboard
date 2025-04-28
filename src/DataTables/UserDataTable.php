@@ -11,7 +11,8 @@ class UserDataTable extends DataTable
     protected $model = User::class;
     public function dataTable($query)
     {
-        $dt = parent::dataTable($query->withTrashed());
+        $dt = parent::dataTable($query->withTrashed())
+        ->addColumn('role', fn($r)=> $r->role_name);
         $rawCols = $this->getRawColumns();
         return $dt->rawColumns($rawCols);
     }
@@ -30,6 +31,7 @@ class UserDataTable extends DataTable
                 Column::make('first_name'),
                 Column::make('last_name'),
                 Column::make('user_name'),
+                Column::make('role'),
                 Column::make('email'),
             ],
             parent::getColumns()

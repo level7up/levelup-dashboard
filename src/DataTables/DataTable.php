@@ -12,6 +12,7 @@ abstract class DataTable extends BaseDataTable
 {
     protected $model;
     protected $scrollX = false;
+    protected $perPage = 10;
 
     public function dataTable($query)
     {
@@ -30,6 +31,7 @@ abstract class DataTable extends BaseDataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->dom('Bfrtip')
+                    ->pageLength($this->perPage)
                     ->orderBy(0)
                     ->buttons(
                         $this->getButtons()
